@@ -1,0 +1,88 @@
+page {
+  background: #F5F6F7;
+}
+
+.container {
+  overflow: hidden;
+}
+
+.container .logo_box {
+  margin: 112rpx 0 70rpx 0;
+}
+
+.container .logo_box image {
+  width: 126rpx;
+  height: 126rpx;
+  display: block;
+  margin:  0 auto;
+}
+
+.container .cont_box {
+  padding: 0 52rpx;
+  box-sizing: border-box;
+}
+
+.container .cont_box .input_box {
+  margin-bottom: 62rpx;
+}
+
+.container .cont_box .input_box .item {
+  display: flex;
+  height: 95rpx;
+  border-bottom: 2rpx solid #2D82FF;
+}
+
+.container .cont_box .input_box .item>view {
+  margin-right: 56rpx;
+  height: 100%;
+  line-height: 95rpx;
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+}
+
+.container .cont_box .input_box .item>input {
+  flex: 1;
+  height: 100%;
+  line-height: 95rpx;
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+}
+
+.container .cont_box .input_box .item>image {
+  height: 23rpx;
+  width: 39rpx;
+  display: block;
+  margin: 51rpx 5rpx 0 0;
+}
+
+.container .cont_box .ris_txt {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size:22rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:#2D82FF;
+  text-align: center;
+}
+
+.container .bot_box {
+  margin-top: 80rpx;
+  padding: 0 50rpx;
+  box-sizing: border-box;
+}
+
+.container .bot_box view {
+  height: 86rpx;
+  line-height: 86rpx;
+  text-align: center;
+  border-radius: 43rpx;
+  background: #fff;
+  color: #2D82FF;
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+}

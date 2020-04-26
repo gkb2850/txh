@@ -1,0 +1,153 @@
+page {
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+  background: #F8F9FA;
+}
+
+.container .top {
+  height: 172rpx;
+  border-radius: 0 0 24rpx 24rpx;
+  background: #fff;
+  width: 100%;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+}
+
+.container .top .login_no {
+  height: 100%;
+  padding: 20rpx 0 40rpx 0;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.container .top .login_no>image {
+  width: 112rpx;
+  height: 112rpx;
+  display: block;
+  margin-right: 20rpx;
+}
+
+.container .top .login_no .right_txt {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.container .top .login_no .right_txt .lgoin_txt {
+  height: 48rpx;
+  line-height: 48rpx;
+  font-size:40rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color: #2D82FF;
+  padding: 0 60rpx 0 0;
+}
+
+.container .top .login_no .right_txt .register_txt {
+  height: 48rpx;
+  line-height: 48rpx;
+  font-size:40rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color: #2D82FF;
+  padding:  0 60rpx 0 0;
+}
+
+
+.container .top .login_yes {
+  height: 100%;
+  padding: 20rpx 0 40rpx 0;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.container .top .login_yes>image {
+  width: 112rpx;
+  height: 112rpx;
+  display: block;
+  margin-right: 20rpx;
+}
+
+.container .top .login_yes .right_txt {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.container .top .login_yes .right_txt .lgoin_txt {
+  height: 48rpx;
+  line-height: 48rpx;
+  font-size:44rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:rgba(50,57,67,1);
+  margin-top: 12rpx;
+}
+
+.container .top .login_yes .right_txt .register_txt {
+  height: 24rpx;
+  line-height: 24rpx;
+  font-size:24rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(99,109,123,1);
+  margin-top: 16rpx;
+}
+
+.container .cont_box {
+  margin-top: 24rpx;
+  border-radius: 24rpx;
+  overflow: hidden;
+}
+
+.container .cont_box .item_box {
+  height: 100rpx;
+  background: #fff;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+}
+
+.container .cont_box .item_box navigator {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.container .cont_box .item_box navigator>image {
+  height: 32rpx;
+  width: 32rpx;
+  display: block;
+  margin: 34rpx 16rpx 34rpx 0;
+}
+
+.container .cont_box .item_box navigator .right_box {
+  flex: 1;
+  display: flex;
+}
+
+.container .cont_box .item_box navigator .right_box>view {
+  flex: 1;
+  height: 100%;
+  line-height: 100rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(50,57,67,1);
+}
+
+.container .cont_box .item_box navigator .right_box>image {
+  height: 28rpx;
+  width: 28rpx;
+  display: block;
+  margin: 36rpx 0;
+}
+
+.container .cont_box .item_box:nth-child(4) {
+  margin-top: 24rpx;
+  border-radius: 24rpx 24rpx;
+}

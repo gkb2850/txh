@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/my",
+    "pages/countryNews/countryNews",
+    "pages/countryCar/countryCar",
+    "pages/login/login",
+    "pages/register/register"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "同乡会",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "同乡会资讯",
+        "iconPath": "assets/images/index_icon.png",
+        "selectedIconPath": "assets/images/indexac_icon.png"
+      },
+      {
+        "pagePath": "pages/countryNews/countryNews",
+        "text": "我的同乡会",
+        "iconPath": "assets/images/news_icon.png",
+        "selectedIconPath": "assets/images/newsac_icon.png"
+      },
+      {
+        "pagePath": "pages/countryCar/countryCar",
+        "text": "同乡会包车",
+        "iconPath": "assets/images/car_icon.png",
+        "selectedIconPath": "assets/images/carac_icon.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "个人中心",
+        "iconPath": "assets/images/my_icon.png",
+        "selectedIconPath": "assets/images/myac_icon.png"
+      }
+    ],
+    "color": "#2c2c2c",
+    "selectedColor": "#2D82FF",
+    "backgroundColor": "#fff"
+  },
+  "sitemapLocation": "sitemap.json"
+}

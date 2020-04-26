@@ -1,0 +1,23 @@
+<view class="container">
+  <view class="logo_box">
+    <image src=""></image>
+  </view>
+  <view class="cont_box">
+    <view class="input_box">
+      <view class="item">
+        <view>账号</view>
+        <input placeholder="请输入账号"></input>
+        <image src="../../assets/images/eye_icon.png"></image>
+      </view>
+      <view class="item">
+        <view>密码</view>
+        <input placeholder="请输入密码" password></input>
+        <image src="../../assets/images/eyes_icon.png"></image>
+      </view>
+    </view>
+    <view class="ris_txt" bindtap="toRegister">新用户注册</view>
+  </view>
+  <view class="bot_box">
+    <view>登录</view>
+  </view>
+</view>

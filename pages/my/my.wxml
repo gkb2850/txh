@@ -1,0 +1,65 @@
+<view class="container">
+  <view class="top">
+    <view class="login_no" wx:if="{{true}}">
+      <image src="../../assets/images/userPeople_icon.png"></image>
+      <view class="right_txt">
+        <view class="lgoin_txt" bindtap="toLogin">登录</view>
+        <view class="register_txt" bindtap="toRegister">注册</view>
+      </view>
+    </view>
+    <view class="login_yes" wx:else>
+      <image src="../../assets/images/userPeople_icon.png"></image>
+      <view class="right_txt">
+        <view class="lgoin_txt">账号</view>
+        <view class="register_txt">手机号</view>
+      </view>
+    </view>
+  </view>
+  <view class="cont_box">
+    <view class="item_box">
+      <navigator url="" hover-class="none">
+        <image src="../../assets/images/peopleInfo_icon.png"></image>
+        <view class="right_box">
+          <view>个人信息</view>
+          <image src="../../assets/images/toright_icon.png"></image>
+        </view>
+      </navigator>
+    </view>
+    <view class="item_box">
+      <navigator url="" hover-class="none">
+        <image src="../../assets/images/carticket_icon.png"></image>
+        <view class="right_box">
+          <view>车票订单</view>
+          <image src="../../assets/images/toright_icon.png"></image>
+        </view>
+      </navigator>
+    </view>
+    <view class="item_box">
+      <navigator url="" hover-class="none">
+        <image src="../../assets/images/myactivity_icon.png"></image>
+        <view class="right_box">
+          <view>报名活动</view>
+          <image src="../../assets/images/toright_icon.png"></image>
+        </view>
+      </navigator>
+    </view>
+    <view class="item_box">
+      <navigator url="" hover-class="none">
+        <image src="../../assets/images/carmanage_icon.png"></image>
+        <view class="right_box">
+          <view>包车管理</view>
+          <image src="../../assets/images/toright_icon.png"></image>
+        </view>
+      </navigator>
+    </view>
+    <view class="item_box">
+      <navigator url="" hover-class="none">
+        <image src="../../assets/images/activitymanage_iocn.png"></image>
+        <view class="right_box">
+          <view>活动管理</view>
+          <image src="../../assets/images/toright_icon.png"></image>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>
