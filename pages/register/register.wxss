@@ -46,11 +46,11 @@ page {
   margin: 36rpx 0;
 }
 
-.container .item_box .right .userImg {
-  height: 90rpx;
-  width: 90rpx;
+.container .item_boxs .right .userImg {
+  height: 120rpx;
+  width: 120rpx;
   margin: 5rpx 0;
-  border-radius: 45rpx;
+  border-radius: 60rpx;
 }
 
 .container .item_box .right .radio_group {
@@ -81,4 +81,16 @@ page {
   font-weight:500;
   background: #2D82FF;
   border-radius: 43rpx;
+}
+
+.container .item_boxs {
+  height: 130rpx;
+}
+
+.container .item_boxs .txt_title {
+  line-height: 130rpx;
+}
+
+.container .item_box .right .txt {
+  line-height: 130rpx;
 }

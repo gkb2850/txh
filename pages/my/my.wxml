@@ -17,7 +17,7 @@
   </view>
   <view class="cont_box">
     <view class="item_box">
-      <navigator url="" hover-class="none">
+      <navigator url="/pages/perInformation/perInformation" hover-class="none">
         <image src="../../assets/images/peopleInfo_icon.png"></image>
         <view class="right_box">
           <view>个人信息</view>

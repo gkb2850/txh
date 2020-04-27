@@ -6,7 +6,8 @@
     "pages/countryCar/countryCar",
     "pages/login/login",
     "pages/register/register",
-    "pages/perInformation/perInformation"
+    "pages/perInformation/perInformation",
+    "pages/modifyMyInfo/modifyMyInfo"
   ],
   "window": {
     "backgroundTextStyle": "light",

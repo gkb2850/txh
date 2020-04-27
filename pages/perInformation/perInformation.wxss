@@ -1,1 +1,80 @@
-/* pages/perInformation/perInformation.wxss */
+.container {
+  background: #F8F9FA;
+}
+
+.container .item_box {
+  height: 100rpx;
+  display: flex;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:#989EA7;
+  border-bottom: 2rpx solid #D1D1D1;
+  background: #fff;
+}
+
+.container .item_box .txt {
+  height: 100%;
+  line-height: 100rpx;
+  width: 30%;
+}
+
+.container .item_box .right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  height: 100%;
+  position: relative;
+}
+
+.container .item_box .right>view {
+  height: 100%;
+  line-height: 100rpx;
+  margin-right: 20rpx;
+  padding-right: 22rpx;
+}
+
+.container .item_box .right .picker_box {
+  height: 100%;
+  flex: 1;
+}
+
+.container .item_box .right .picker_box .picker {
+  height: 100rpx;
+  line-height: 100rpx;
+  display: block;
+  text-align: right;
+  padding-right: 44rpx;
+}
+
+.container .item_box .right .arrow {
+  height: 28rpx;
+  width: 28rpx;
+  display: block;
+  margin: 36rpx 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.container .item_boxf {
+  height: 130rpx;
+}
+
+.container .item_boxf .txt {
+  line-height: 130rpx;
+}
+
+.container .item_boxf .userImg {
+  height: 120rpx;
+  width: 120rpx;
+  display: block;
+  margin: 5rpx 0;
+  border-radius: 60rpx;
+}
+
+.container .item_boxf .right .arrow {
+  margin: 51rpx 0;
+}

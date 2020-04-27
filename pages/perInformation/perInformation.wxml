@@ -1,1 +1,83 @@
-
+<view class="container">
+  <view class="item_box item_boxf" bindtap="changeMyInfo" data-type="userImg">
+    <view class="txt">头像</view>
+    <view class="right">
+      <image class="userImg"></image>
+      <image class="arrow" src="../../assets/images/toright_icons.png"></image>
+    </view>
+  </view>
+  <view class="item_box" bindtap="changeMyInfo" data-type="name">
+    <view class="txt">姓名</view>
+    <view class="right">
+      <view>哒哒哒</view>
+      <image class="arrow" src="../../assets/images/toright_icons.png"></image>
+    </view>
+  </view>
+  <view class="item_box" bindtap="changeMyInfo" data-type="phone">
+    <view class="txt">手机号</view>
+    <view class="right">
+      <view>123456789</view>
+      <image class="arrow" src="../../assets/images/toright_icons.png"></image>
+    </view>
+  </view>
+  <view class="item_box">
+    <view class="txt">性别</view>
+    <view class="right">
+      <picker class="picker_box" bindchange="bindPickerChange" data-type="sex" value="{{index}}" range="{{sexList}}">
+        <view class="picker">{{register.sex}}</view>
+      </picker>
+      <image class="arrow" src="../../assets/images/toright_icons.png"></image>
+    </view>
+  </view>
+  <view class="item_box">
+    <view class="txt">家乡</view>
+    <view class="right">
+      <picker class="picker_box" bindchange="bindPickerChange" data-type="hometown" value="{{index}}" range="{{hometownList}}">
+        <view class="picker">{{register.hometown}}</view>
+      </picker>
+      <image class="arrow" src="../../assets/images/toright_icons.png"></image>
+    </view>
+  </view>
+  <view class="item_box">
+    <view class="txt">年级</view>
+    <view class="right">
+      <picker class="picker_box" bindchange="bindPickerChange" data-type="gradetxt" value="{{index}}" range="{{gradetxtList}}">
+        <view class="picker">{{register.gradetxt}}</view>
+      </picker>
+      <image class="arrow" src="../../assets/images/toright_icons.png"></image>
+    </view>
+  </view>
+  <view class="item_box">
+    <view class="txt">院系</view>
+    <view class="right">
+      <picker class="picker_box" bindchange="bindPickerChange" data-type="collegestxt" value="{{index}}" range="{{collegestxtList}}">
+        <view class="picker">{{register.collegestxt}}</view>
+      </picker>
+      <image class="arrow" src="../../assets/images/toright_icons.png"></image>
+    </view>
+  </view>
+  <view class="item_box">
+    <view class="txt">班级</view>
+    <view class="right">
+      <picker class="picker_box" bindchange="bindPickerChange" data-type="classtxt" value="{{index}}" range="{{classtxtList}}">
+        <view class="picker">{{register.classtxt}}</view>
+      </picker>
+      <image class="arrow" src="../../assets/images/toright_icons.png"></image>
+    </view>
+  </view>
+  <view class="item_box">
+    <view class="txt">专业</view>
+    <view class="right">
+      <picker class="picker_box" bindchange="bindPickerChange" data-type="majortxt" value="{{index}}" range="{{majortxtList}}">
+        <view class="picker">{{register.majortxt}}</view>
+      </picker>
+      <image class="arrow" src="../../assets/images/toright_icons.png"></image>
+    </view>
+  </view>
+  <view class="item_box" bindtap="changeMyInfo" data-type="password">
+    <view class="txt">密码</view>
+    <view class="right">
+      <image class="arrow" src="../../assets/images/toright_icons.png"></image>
+    </view>
+  </view>
+</view>

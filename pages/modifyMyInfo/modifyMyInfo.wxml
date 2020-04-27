@@ -1,0 +1,31 @@
+<view class="container" wx:if="{{type === 'name'}}">
+  <view class="input_box">
+    <view>姓名</view>
+    <input type="text" value="{{name}}" focus></input>
+  </view>
+  <view class="sure">确定</view>
+</view>
+
+<view class="container" wx:if="{{type === 'phone'}}">
+  <view class="input_box">
+    <view>手机号</view>
+    <input type="number" value="{{phone}}" focus></input>
+  </view>
+  <view class="sure">确定</view>
+</view>
+
+<view class="container" wx:if="{{type === 'password'}}">
+  <view class="input_box">
+    <view>旧密码</view>
+    <input type="text" value="{{password}}" password focus></input>
+  </view>
+  <view class="input_box">
+    <view>新密码</view>
+    <input type="text" value="{{passwordNew}}" password></input>
+  </view>
+  <view class="input_box">
+    <view>确认密码</view>
+    <input type="text" value="{{passwordNews}}" password></input>
+  </view>
+  <view class="sure">确定</view>
+</view>

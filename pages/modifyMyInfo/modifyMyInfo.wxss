@@ -1,0 +1,38 @@
+page {
+  background: #F8F9FA;
+}
+
+.container .input_box {
+  height: 100rpx;
+  display: flex;
+  padding: 0 24rpx;
+  background: #fff;
+  line-height: 100rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(50,57,67,1);
+  border-bottom: 2rpx solid #D1D1D1;
+}
+
+.container .input_box view {
+  width: 150rpx;
+  height: 100%;
+  line-height: 100rpx;
+}
+
+.container .input_box input {
+  flex: 1;
+  height: 100%;
+  line-height: 100rpx;
+}
+
+.container .sure {
+  margin: 20rpx;
+  background: #2D82FF;
+  color: #fff;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 10rpx;
+}

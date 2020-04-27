@@ -1,5 +1,5 @@
 <view class="container">
-  <view class="item_box">
+  <view class="item_box item_boxs">
     <view class="txt_title">头像:</view>
     <view class="right" bindtap="toSelectImg">
       <image wx:if="{{register.userImg}}" class="userImg" src="{{register.userImg}}"></image>
