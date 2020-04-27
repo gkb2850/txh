@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "v-activeity": "../../component/activeity/activeity"
+  },
   "navigationBarTitleText": "我的同乡会"
 }

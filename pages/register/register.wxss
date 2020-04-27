@@ -1,5 +1,5 @@
 page {
-  background: #F5F6F7;
+  background: #fff;
 }
 
 .container {
@@ -75,10 +75,10 @@ page {
   height: 86rpx;
   line-height: 86rpx;
   text-align: center;
-  color: #2D82FF;
+  color: #fff;
   font-size:28rpx;
   font-family:PingFang SC;
   font-weight:500;
-  background: #fff;
+  background: #2D82FF;
   border-radius: 43rpx;
 }

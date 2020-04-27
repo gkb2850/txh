@@ -1,2 +1,26 @@
-<!--pages/countryCar/countryCar.wxml-->
-<text>pages/countryCar/countryCar.wxml</text>
+<view class="container">
+  <view class="title">
+    <image src="../../assets/images/search_icon.png"></image>
+    <input placeholder="搜索车票"></input>
+  </view>
+  <view class="cont_box">
+    <view class="left">
+      <scroll-view style="height:100%;" scroll-y>
+        <view class="left_box">
+          <view class="left_item">
+            <view class="txt">1231</view>
+            <view class="line"></view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="right">
+      <scroll-view style="height: 100%;" scroll-y>
+        <view class="right_box">
+          <v-caritem></v-caritem>
+          <v-caritem></v-caritem>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

@@ -1,1 +1,96 @@
-/* pages/countryCar/countryCar.wxss */
+page {
+  height: 100%;
+  background: #fff;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-right: 24rpx;
+  box-sizing: border-box;
+}
+
+.container .title {
+  margin: 8rpx 24rpx 12rpx 24rpx;
+  height: 72rpx;
+  display: flex;
+  background: #F5F8FC;
+  border-radius: 8rpx;
+}
+
+.container .title>image {
+ width: 32rpx;
+ height: 32rpx;
+ margin: 20rpx 12rpx 20rpx 24rpx; 
+}
+
+.container .title>input {
+  flex: 1;
+  height: 100%;
+  line-height: 72rpx;
+  font-size: 28rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(206,211,218,1);
+}
+
+.container .cont_box {
+  flex: 1;
+  padding-top: 8rpx;
+  overflow: hidden;
+  display: flex;
+}
+
+.container .cont_box .left {
+  width: 160rpx;
+  margin-right: 24rpx;
+  height: 100%;
+  border-radius: 0 8rpx 8rpx 0;
+}
+
+.container .cont_box .left .left_box .left_item {
+  width: 160rpx;
+  height: 100rpx;
+  background: #F8F9FA;
+  position: relative;
+}
+
+.container .cont_box .left .left_box .left_item.active {
+  background: #fff;
+}
+
+.container .cont_box .left .left_box .left_item .txt {
+  width: 5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 100%;
+  line-height: 100rpx;
+  margin: 0 auto;
+  font-size: 26rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(99,109,123,1);
+  text-align: center;
+}
+
+.container .cont_box .left .left_box .left_item .txt.active {
+  color: #2D82FF;
+  font-weight: 500;
+}
+
+.container .cont_box .left .left_box .left_item .line {
+  width: 4rpx;
+  height: 40rpx;
+  position: absolute;
+  left: 0;
+  top: 30rpx;
+  background: #2D82FF;
+}
+
+.container .cont_box .right {
+  height: 100%;
+  flex: 1;
+  overflow: hidden;
+}

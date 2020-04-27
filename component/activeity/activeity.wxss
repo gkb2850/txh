@@ -1,0 +1,112 @@
+.container {
+  background: #fff;
+  border-radius: 10rpx;
+  box-shadow:0px 0px 15px 0px rgba(87,191,106,0.15);
+  display: flex;
+  height: 244rpx;
+}
+
+.container .left {
+  width: 149rpx;
+  height: 100%;
+}
+
+.container .left>image {
+  width: 92rpx;
+  height: 92rpx;
+  border-radius: 8rpx;
+  margin: 76rpx auto;
+  display: block;
+}
+
+.container .right {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+}
+
+.container .right .title {
+  margin-top: 44rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.container .right .brief_txt {
+  margin-top: 23rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:#999999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.container .right .people {
+  height: 24rpx;
+  display: flex;
+  overflow: hidden;
+  margin-top: 19rpx;
+}
+
+.container .right .people>view:first-child {
+  height: 100%;
+  line-height: 24rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+
+.container .right .people>view:last-child {
+  height: 100%;
+  line-height: 24rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  margin-left: 25rpx;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.container .right .time {
+  height: 24rpx;
+  display: flex;
+  overflow: hidden;
+  margin-top: 19rpx;
+}
+
+.container .right .time>view:first-child {
+  height: 100%;
+  line-height: 24rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+
+.container .right .time>view:last-child {
+  height: 100%;
+  line-height: 24rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  margin-left: 25rpx;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

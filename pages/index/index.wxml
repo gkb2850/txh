@@ -1,1 +1,31 @@
-<view>首页</view>
+<view class="container">
+  <view class="title">
+    <image src="../../assets/images/search_icon.png"></image>
+    <input placeholder="搜索活动资讯"></input>
+  </view>
+  <view class="cont_box">
+    <view class="ad_box">
+      <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="swiper_index">
+        <!-- <block wx:for="{{background}}" wx:key="*this"> -->
+          <swiper-item>
+            <image src="../../assets/images/indexs1.jpg"></image>
+          </swiper-item>
+          <swiper-item>
+            <image src="../../assets/images/indexs2.jpg"></image>
+          </swiper-item>
+        <!-- </block> -->
+      </swiper>
+    </view>
+    <view class="new_box">
+      <view class="item_box">
+        <view class="left">
+          <image src=""></image>
+        </view>
+        <view class="right">
+          <view class="ac_title">活动标题</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

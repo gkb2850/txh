@@ -63,6 +63,27 @@
 					"id": -1,
 					"name": "pages/register/register",
 					"pathName": "pages/register/register",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/countryCar/countryCar",
+					"pathName": "pages/countryCar/countryCar",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/countryNews/countryNews",
+					"pathName": "pages/countryNews/countryNews",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/perInformation/perInformation",
+					"pathName": "pages/perInformation/perInformation",
 					"scene": null
 				}
 			]

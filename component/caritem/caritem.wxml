@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="title">
+    <view class="left">19:18</view>
+    <view class="right">
+      <view>AAAAAAAAAAA-BBBBBBBBBBBBB</view>
+      <view>4-27</view>
+    </view>
+  </view>
+  <view class="cont">
+    <view class="txtcar">班次：滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴</view>
+    <view class="price">票价：全票 ￥150</view>
+  </view>
+  <view class="bot">
+    <view class="left">
+      <view class="num">剩35张</view>
+      <view class="money">￥150</view>
+    </view>
+    <view class="right">
+      <view>购票</view>
+    </view>
+  </view>
+</view>

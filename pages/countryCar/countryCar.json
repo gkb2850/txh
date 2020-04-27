@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "v-caritem":"../../component/caritem/caritem"
+  },
   "navigationBarTitleText": "同乡会包车"
 }

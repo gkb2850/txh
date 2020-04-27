@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="left">
+    <image src="../../assets/images/userPeople_icon.png"></image>
+  </view>
+  <view class="right">
+    <view class="title">标题</view>
+    <view class="brief_txt">简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介</view>
+    <view class="people">
+      <view>负责人:</view>
+      <view>哒哒哒</view>
+    </view>
+    <view class="time">
+      <view>活动时间:</view>
+      <view>2020-4-27</view>
+    </view>
+  </view>
+</view>

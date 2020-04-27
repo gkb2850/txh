@@ -1,1 +1,21 @@
-<view>活动</view>
+<view class="container">
+  <view class="title">
+    <image src="../../assets/images/search_icon.png"></image>
+    <input placeholder="搜索活动"></input>
+  </view>
+  <view class="cont_box">
+    <view class="cont_top">
+      <view class="left">
+        <view></view>
+        <view>所有</view>
+      </view>
+      <view class="right" bindtap="toSeePhone">
+        <view>联系方式</view>
+        <image src="../../assets/images/contacts_people.png"></image>
+      </view>
+    </view>
+    <view class="cont_center">
+      <v-activeity></v-activeity>
+    </view>
+  </view>
+</view>

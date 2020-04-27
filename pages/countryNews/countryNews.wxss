@@ -1,1 +1,88 @@
-/* pages/news/news.wxss */
+page {
+  background: #fff;
+}
+
+.container {
+
+}
+
+.container .title {
+  margin: 8rpx 24rpx 12rpx 24rpx;
+  height: 72rpx;
+  display: flex;
+  background: #F5F8FC;
+  border-radius: 8rpx;
+}
+
+.container .title>image {
+ width: 32rpx;
+ height: 32rpx;
+ margin: 20rpx 12rpx 20rpx 24rpx; 
+}
+
+.container .title>input {
+  flex: 1;
+  height: 100%;
+  line-height: 72rpx;
+  font-size: 28rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(206,211,218,1);
+}
+
+.container .cont_box {
+  padding: 0 24rpx;
+  box-sizing: border-box;
+}
+
+.container .cont_box .cont_top {
+  display: flex;
+  height: 60rpx;
+  justify-content: space-between;
+}
+
+.container .cont_box .cont_top .left {
+  display: inline-flex;
+  height: 100%;
+}
+
+.container .cont_box .cont_top .left>view:nth-child(1) {
+  width: 22rpx;
+  height: 22rpx;
+  margin: 19rpx 21rpx 19rpx 0;  
+  background: #2D82FF;
+}
+
+.container .cont_box .cont_top .left>view:nth-child(2) {
+  height: 100%;
+  line-height: 60rpx;
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color: #2D82FF;
+}
+
+.container .cont_box .cont_top .right {
+  display: inline-flex;
+  height: 100%;
+}
+
+.container .cont_box .cont_top .right>view {
+  height: 100%;
+  line-height: 60rpx;
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+}
+
+.container .cont_box .cont_top .right>image {
+ width: 36rpx;
+ height: 36rpx;
+ display: block;
+ margin: 12rpx 0 12rpx 10rpx; 
+}
+
+.container .cont_box .cont_center {
+  padding-top: 20rpx;
+}
