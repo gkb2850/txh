@@ -132,12 +132,13 @@ page {
 
 .container .cont_box .item_box navigator .right_box>view {
   flex: 1;
-  height: 100%;
-  line-height: 100rpx;
+  height: 32rpx;
+  line-height: 32rpx;
   font-size:28rpx;
   font-family:PingFangSC-Regular,PingFang SC;
   font-weight:400;
   color:rgba(50,57,67,1);
+  margin: 34rpx 0;
 }
 
 .container .cont_box .item_box navigator .right_box>image {

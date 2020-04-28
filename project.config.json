@@ -110,8 +110,9 @@
 				},
 				{
 					"id": -1,
-					"name": "pages/ticketDetail/ticketDetail",
-					"pathName": "pages/ticketDetail/ticketDetail",
+					"name": "pages/signupactiveity/signupactiveity",
+					"pathName": "pages/signupactiveity/signupactiveity",
+					"query": "",
 					"scene": null
 				}
 			]

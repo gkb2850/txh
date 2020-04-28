@@ -1,0 +1,85 @@
+@import "../../assets/weui.wxss";
+@import "../../assets/iconfont.wxss";
+
+page {
+  background: #F8F9FA;
+}
+
+.ql-active {
+  color: #22C704;
+}
+
+.iconfont {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.toolbar {
+  box-sizing: border-box;
+  padding: 0 10px;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  right: 100%;
+  top: 88rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ECECEC;
+  border-left: none;
+  border-right: none;
+}
+
+.container {
+  
+}
+
+.container .top_nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 88rpx;
+  background: #fff;
+  display: flex;
+  box-shadow:0px 8px 12px 0px rgba(204,204,204,0.2);
+}
+
+.container .top_nav .nav_item {
+  flex: 1;
+  height: 100%;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(150,157,168,1);
+  position: relative;
+}
+
+.container .top_nav .nav_item .txt {
+  height: 100%;
+  line-height: 88rpx;
+  text-align: center;
+}
+
+.container .top_nav .nav_item .txt.active {
+  color: #2D82FF;
+  font-weight: 500;
+}
+
+.container .top_nav .nav_item .line {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 60rpx;
+  height: 4rpx;
+  background: #2D82FF;
+}
+
+.container .cont {
+  padding-top: 88rpx;
+}

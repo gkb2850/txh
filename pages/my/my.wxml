@@ -1,6 +1,6 @@
 <view class="container">
   <view class="top">
-    <view class="login_no" wx:if="{{true}}">
+    <view class="login_no" wx:if="{{false}}">
       <image src="../../assets/images/userPeople_icon.png"></image>
       <view class="right_txt">
         <view class="lgoin_txt" bindtap="toLogin">登录</view>
@@ -38,7 +38,7 @@
       <navigator url="" hover-class="none">
         <image src="../../assets/images/myactivity_icon.png"></image>
         <view class="right_box">
-          <view>报名活动</view>
+          <view>我的活动</view>
           <image src="../../assets/images/toright_icon.png"></image>
         </view>
       </navigator>

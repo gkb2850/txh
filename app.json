@@ -11,7 +11,8 @@
     "pages/carTicketList/carTicketList",
     "pages/releaseCartxt/releaseCartxt",
     "pages/charterCar/charterCar",
-    "pages/ticketDetail/ticketDetail"
+    "pages/ticketDetail/ticketDetail",
+    "pages/signupactiveity/signupactiveity"
   ],
   "window": {
     "backgroundTextStyle": "light",
