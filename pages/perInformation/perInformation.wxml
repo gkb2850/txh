@@ -2,21 +2,21 @@
   <view class="item_box item_boxf" bindtap="changeMyInfo" data-type="userImg">
     <view class="txt">头像</view>
     <view class="right">
-      <image class="userImg"></image>
+      <image class="userImg" src="{{register.userImg}}"></image>
       <image class="arrow" src="../../assets/images/toright_icons.png"></image>
     </view>
   </view>
   <view class="item_box" bindtap="changeMyInfo" data-type="name">
     <view class="txt">姓名</view>
     <view class="right">
-      <view>哒哒哒</view>
+      <view>{{register.name}}</view>
       <image class="arrow" src="../../assets/images/toright_icons.png"></image>
     </view>
   </view>
   <view class="item_box" bindtap="changeMyInfo" data-type="phone">
     <view class="txt">手机号</view>
     <view class="right">
-      <view>123456789</view>
+      <view>{{register.phone}}</view>
       <image class="arrow" src="../../assets/images/toright_icons.png"></image>
     </view>
   </view>

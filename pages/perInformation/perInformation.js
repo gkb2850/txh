@@ -6,15 +6,15 @@ Page({
    */
   data: {
     register: {
-      userImg: '',
-      name: '',
-      phone: '',
-      sex: '',
-      hometown: '',
-      gradetxt: '',
-      collegestxt: '',
-      classtxt: '',
-      majortxt: '',
+      userImg: '../../assets/images/userImg.jpg',
+      name: '哒哒哒',
+      phone: '15905698535',
+      sex: '男',
+      hometown: '广东',
+      gradetxt: '大四',
+      collegestxt: '信息',
+      classtxt: '软件',
+      majortxt: '软件技术',
       password: '',
       passwords: ''
     },

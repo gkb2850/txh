@@ -1,0 +1,29 @@
+page {
+  background: #F8F9FA;
+}
+
+.container .title {
+  height: 80rpx;
+  display: flex;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.container .title>image {
+  height: 40rpx;
+  width: 40rpx;
+  display: block;
+  margin: 20rpx 10rpx 20rpx 0;
+}
+
+.container .title>view {
+  height: 30rpx;
+  line-height: 30rpx;
+  margin: 25rpx 0;
+  flex: 1;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color: #2D82FF;
+}

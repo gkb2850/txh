@@ -3,13 +3,17 @@
     <image src="../../assets/images/search_icon.png"></image>
     <input placeholder="搜索车票"></input>
   </view>
+  <view class="cont_btn" bindtap="toReleaseCar">
+    <image src="../../assets/images/add_icon.png"></image>
+    <view>发布</view>
+  </view>
   <view class="cont_box">
     <view class="left">
       <scroll-view style="height:100%;" scroll-y>
         <view class="left_box">
-          <view class="left_item">
-            <view class="txt">1231</view>
-            <view class="line"></view>
+          <view class="left_item" wx:for="{{addressList}}" wx:key="index" data-index="{{index}}" bindtap="clickAddressLeft">
+            <view class="txt">{{item}}</view>
+            <view class="line" wx:if="{{index === addressIndex}}"></view>
           </view>
         </view>
       </scroll-view>
@@ -17,8 +21,7 @@
     <view class="right">
       <scroll-view style="height: 100%;" scroll-y>
         <view class="right_box">
-          <v-caritem></v-caritem>
-          <v-caritem></v-caritem>
+          <v-caritem carticketList="{{carticketList}}"></v-caritem>
         </view>
       </scroll-view>
     </view>

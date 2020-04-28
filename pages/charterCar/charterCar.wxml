@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="title">
+    <image src="../../assets/images/hangchengjilu.png"></image>
+    <view>我发布的行程</view>
+  </view>
+  <view class="cont">
+    <v-carticket status="2"></v-carticket>
+  </view>
+</view>

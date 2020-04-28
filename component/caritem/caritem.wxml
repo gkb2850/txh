@@ -1,22 +1,25 @@
-<view class="container">
+<view class="container" wx:for="{{carticketList}}" wx:key="index">
   <view class="title">
-    <view class="left">19:18</view>
+    <view class="left">{{item.time}}</view>
     <view class="right">
-      <view>AAAAAAAAAAA-BBBBBBBBBBBBB</view>
-      <view>4-27</view>
+      <view>{{item.titletxt}}</view>
+      <view>{{item.dayTime}}</view>
     </view>
   </view>
   <view class="cont">
-    <view class="txtcar">班次：滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴滴</view>
-    <view class="price">票价：全票 ￥150</view>
+    <view class="txtcar">班次：{{item.cartxt}}</view>
+    <view class="price">票价：全票 ￥{{item.money}}</view>
   </view>
   <view class="bot">
     <view class="left">
-      <view class="num">剩35张</view>
-      <view class="money">￥150</view>
+      <view class="num">剩{{item.num}}张</view>
+      <view class="money">￥{{item.money}}</view>
     </view>
-    <view class="right">
+    <view class="right" wx:if="{{!typeticket && item.num > 0}}">
       <view>购票</view>
+    </view>
+    <view class="right" wx:if="{{typeticket}}">
+      <view>退票</view>
     </view>
   </view>
 </view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "v-carticket": "../../component/carticket/carticket"
+  },
+  "navigationBarTitleText": "车票订单"
+}

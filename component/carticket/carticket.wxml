@@ -1,0 +1,25 @@
+<view class="container" bindtap="clicktoSeek">
+  <view class="title">
+    <view class="time">2020-04-28 14:30发车</view>
+    <view class="status" wx:if="{{status === '0'}}">待出发</view>
+    <view class="status" wx:if="{{status === '1'}}">交易完成</view>
+    <view class="status statusblue" wx:if="{{status === '2'}}">查看详情</view>
+  </view>
+  <view class="cont">
+    <view class="right">
+      <view class="icon_box">
+        <image src="../../assets/images/yunquanf.png"></image>
+        <view></view>
+        <image src="../../assets/images/yunquanl.png"></image>
+      </view>
+      <view class="txt_site">
+        <view>天河汽车客运站</view>
+        <view>清远</view>
+      </view>
+    </view>
+    <view class="left">
+      <view wx:if="{{status !== '2'}}">1张</view>
+      <view bindtap="clickTicketLabel" wx:if="{{status === '0'}}">退票</view>
+    </view>
+  </view>
+</view>

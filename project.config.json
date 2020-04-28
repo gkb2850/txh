@@ -84,6 +84,34 @@
 					"id": -1,
 					"name": "pages/perInformation/perInformation",
 					"pathName": "pages/perInformation/perInformation",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/carTicketList/carTicketList",
+					"pathName": "pages/carTicketList/carTicketList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/releaseCartxt/releaseCartxt",
+					"pathName": "pages/releaseCartxt/releaseCartxt",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/charterCar/charterCar",
+					"pathName": "pages/charterCar/charterCar",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/ticketDetail/ticketDetail",
+					"pathName": "pages/ticketDetail/ticketDetail",
 					"scene": null
 				}
 			]

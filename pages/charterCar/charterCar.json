@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "v-carticket":"../../component/carticket/carticket"
+  },
+  "navigationBarTitleText": "包车管理"
+}

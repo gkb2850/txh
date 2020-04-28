@@ -1,0 +1,92 @@
+<view class="container">
+  <view class="title">车票行程</view>
+  <view class="cont">
+    <view class="item_box">
+      <view class="left">
+        <image src="../../assets/images/didian1.png"></image>
+      </view>
+      <view class="right">
+        <view class="origin">
+          <view class="top_txt">上车点</view>
+          <input type="text" placeholder="填写出发点"></input>
+        </view>
+        <view class="origin">
+          <view class="top_txt">目的地</view>
+          <input type="text" placeholder="填写目的地"></input>
+        </view>
+      </view>
+    </view>
+    <view class="item_box item_boxnum">
+      <view class="left">
+        <image src="../../assets/images/shijian.png"></image>
+      </view>
+      <view class="right">
+        <view class="origin">
+          <view class="top_txt">预约时间</view>
+          <picker class="picker_box" mode="date" value="{{ticketData.firstDay}}" start="2020-04-01" end="2022-08-01" bindchange="bindDateChange" data-type="firstDay">
+            <view class="picker">{{ticketData.firstDay}}</view>
+          </picker>
+        </view>
+        <view class="origin">
+          <view class="top_txt">结束时间</view>
+          <picker class="picker_box" mode="date" value="{{ticketData.lastDay}}" start="2020-04-01" end="2022-08-01" bindchange="bindDateChange" data-type="lastDay">
+            <view class="picker">{{ticketData.lastDay}}</view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <view class="item_box">
+      <view class="left">
+        <image src="../../assets/images/chepai.png"></image>
+      </view>
+      <view class="right">
+        <view class="origin">
+          <view class="top_txt">发车日期</view>
+          <picker class="picker_box" mode="date" value="{{ticketData.startDay}}" start="2020-04-01" end="2022-08-01" bindchange="bindDateChange" data-type="startDay">
+            <view class="picker">{{ticketData.startDay}}</view>
+          </picker>
+        </view>
+        <view class="origin">
+          <view class="top_txt">发车时间</view>
+          <picker class="picker_box" mode="time" value="{{ticketData.startTime}}" start="06:01" end="22:01" bindchange="bindDateChange" data-type="startTime">
+            <view class="picker">{{ticketData.startTime}}</view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <view class="item_box">
+      <view class="left">
+        <image src="../../assets/images/xiangqing-.png"></image>
+      </view>
+      <view class="right">
+        <view class="origin">
+          <view class="top_txt">班次详情</view>
+          <input type="text" placeholder="填写班次详情"></input>
+        </view>
+      </view>
+    </view>
+    <view class="item_box item_boxnum">
+      <view class="left">
+        <image src="../../assets/images/navicon-jhslsz.png"></image>
+      </view>
+      <view class="right">
+        <view class="origin">
+          <view class="top_txt">车票数</view>
+          <input type="number" placeholder="填写车票数量"></input>
+        </view>
+      </view>
+    </view>
+    <view class="item_box">
+      <view class="left">
+        <image src="../../assets/images/jiagexiugai.png"></image>
+      </view>
+      <view class="right">
+        <view class="origin">
+          <view class="top_txt">价格</view>
+          <input type="number" placeholder="填写车票价"></input>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="bot">发布</view>
+</view>

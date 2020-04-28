@@ -1,0 +1,46 @@
+<view class="container">
+  <view class="title">
+    <view wx:if="{{false}}">已发车</view>
+    <view wx:else>待发车</view>
+  </view>
+  <view class="info_box">
+    <view class="start_time">
+      <view>2020-4-28 18:30</view>
+      <view>发车</view>
+    </view>
+    <view class="items_address">
+      <view class="txt">天河客运站</view>
+      <view class="line"></view>
+      <view class="txt">清远</view>
+    </view>
+    <view class="make_time">
+      <view>预约时间: 2020-04-28</view>
+      <view>结束时间: 2020-04-28</view>
+    </view>
+    <view class="info_txt">
+      <view>哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒</view>
+    </view>
+  </view>
+  <view class="cont">
+    <view class="cont_title">
+      <view class="txt">签到出发人数</view>
+      <view class="btn" bindtap="signInPeopleAll">签到全部</view>
+    </view>
+    <view class="people_box">
+      <view class="name_box" wx:for="{{peopleList}}" wx:key="index" bindtap="signInPeople" data-index="{{index}}">
+        <view class="name {{item.select ? 'nameactive':''}}">{{item.name}}</view>
+        <image src="{{item.select?selectImging:selectImg}}"></image>
+      </view>
+    </view>
+    <view class="num_box">
+      <view class="num_txt">
+        <view>总报名人数:</view>
+        <view>{{allPeopleNum}}</view>
+      </view>
+      <view class="num_txt">
+        <view>已签到人数:</view>
+        <view>{{signInNum}}</view>
+      </view>
+    </view>
+  </view>
+</view>

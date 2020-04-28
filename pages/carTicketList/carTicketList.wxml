@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="top_nav">
+    <view class="nav_item" bindtap="navClick" data-index="0">
+      <view class="txt">待乘车</view>
+      <view class="line" wx:if="{{navIndex === '0'}}"></view>
+    </view>
+    <view class="nav_item" bindtap="navClick" data-index="1">
+      <view class="txt">全部</view>
+      <view class="line" wx:if="{{navIndex === '1'}}"></view>
+    </view>
+  </view>
+  <view class="cont">
+    <v-carticket status="{{navIndex}}"></v-carticket>
+  </view>
+</view>
