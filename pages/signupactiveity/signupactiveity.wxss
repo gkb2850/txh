@@ -1,38 +1,3 @@
-@import "../../assets/weui.wxss";
-@import "../../assets/iconfont.wxss";
-
-page {
-  background: #F8F9FA;
-}
-
-.ql-active {
-  color: #22C704;
-}
-
-.iconfont {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  font-size: 20px;
-}
-
-.toolbar {
-  box-sizing: border-box;
-  padding: 0 10px;
-  height: 50px;
-  width: 100%;
-  position: fixed;
-  left: 0;
-  right: 100%;
-  top: 88rpx;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: 1px solid #ECECEC;
-  border-left: none;
-  border-right: none;
-}
 
 .container {
   
@@ -82,4 +47,5 @@ page {
 
 .container .cont {
   padding-top: 88rpx;
+  margin-top: 20rpx;
 }

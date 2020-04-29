@@ -55,3 +55,7 @@ page {
   font-weight:400;
   color:rgba(50,57,67,1);
 }
+
+.container .cont {
+  padding: 20rpx 24rpx;
+}

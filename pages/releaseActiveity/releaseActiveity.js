@@ -1,35 +1,16 @@
-// pages/signupactiveity/signupactiveity.js
+// pages/releaseActiveity/releaseActiveity.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    navIndex: '0',
-    activeityList: [
-      {
-        title: '揭阳同乡会篮球队招募新生',
-        src: '../../assets/images/timg.jpg',
-        infoTxt: '这次招募的主要是大一新生，让新生快速融入新的集体,营造良好的校园环境',
-        people: '李哒哒',
-        time: '2020-4-24'
-      },
-      {
-        title: '揭阳同乡会植树节春游活动',
-        src: '../../assets/images/zhishu.jpg',
-        infoTxt: '春天是一年中最美的季节,是学生踏青春游的好季节。通过踏青春游活动,让学生亲密接触大自然',
-        people: '刘哒哒',
-        time: '2020-5-20'
-      },
-      {
-        title: '揭阳同乡会举办书法大赛',
-        src: '../../assets/images/shufa.jpg',
-        infoTxt: '为继承和发扬我国书法艺术传统，弘扬爱国主义精神，我们将承办的现场书法大赛',
-        people: '廖哒哒',
-        time: '2020-5-10'
-      }
-    ],
-    formats: {}
+    ticketData: {
+      firstDay: '填写开始时间',
+      lastDay: '填写结束时间',
+    },
+    formats: {},
+    nodes: []
   },
 
   /**
@@ -52,12 +33,6 @@ Page({
   onShow: function () {
 
   },
-  navClick(e) {
-    let index = e.currentTarget.dataset.index
-    this.setData({
-      navIndex: index
-    })
-  },
   format(e) {
     let { name, value } = e.target.dataset
     if (!name) return
@@ -65,11 +40,11 @@ Page({
     this.editorCtx.format(name, value)
 
   },
-  onStatusChange (e) {
+  onStatusChange(e) {
     const formats = e.detail
     this.setData({ formats })
   },
-  onEditorReady (e) {
+  onEditorReady(e) {
     let that = this
     wx.createSelectorQuery().select('#editor').context(function (res) {
       that.editorCtx = res.context
@@ -90,6 +65,31 @@ Page({
           success: function () {
             console.log('insert image success')
           }
+        })
+      }
+    })
+  },
+  bindDateChange(e) {
+    let type = e.currentTarget.dataset.type
+    let value = e.detail.value
+    console.log(e)
+    if (type === 'firstDay') {
+      this.setData({
+        'ticketData.firstDay': value
+      })
+    } else if (type === 'lastDay') {
+      this.setData({
+        'ticketData.lastDay': value
+      })
+    }
+  },
+  toRelease () {
+    let that = this
+    this.editorCtx.getContents({
+      success: res => {
+        console.log(res.html)
+        that.setData({
+          nodes: res.html
         })
       }
     })

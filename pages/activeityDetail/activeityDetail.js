@@ -1,4 +1,4 @@
-// pages/charterCar/charterCar.js
+// pages/activeityDetail/activeityDetail.js
 Page({
 
   /**
@@ -28,11 +28,7 @@ Page({
   onShow: function () {
 
   },
-  toReleaseCar () {
-    wx.navigateTo({
-      url: '/pages/releaseCartxt/releaseCartxt',
-    })
-  },
+
   /**
    * 生命周期函数--监听页面隐藏
    */

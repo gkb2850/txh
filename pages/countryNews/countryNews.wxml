@@ -15,7 +15,7 @@
       </view>
     </view>
     <view class="cont_center">
-      <v-activeity activeityList="{{activeityList}}"></v-activeity>
+      <v-activeity data="{{activeityList}}"></v-activeity>
     </view>
   </view>
 </view>

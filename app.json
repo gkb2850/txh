@@ -12,7 +12,10 @@
     "pages/releaseCartxt/releaseCartxt",
     "pages/charterCar/charterCar",
     "pages/ticketDetail/ticketDetail",
-    "pages/signupactiveity/signupactiveity"
+    "pages/signupactiveity/signupactiveity",
+    "pages/releaseActiveity/releaseActiveity",
+    "pages/charterActiveity/charterActiveity",
+    "pages/activeityDetail/activeityDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

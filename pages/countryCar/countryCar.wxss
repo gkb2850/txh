@@ -35,31 +35,6 @@ page {
   color:rgba(206,211,218,1);
 }
 
-.container .cont_btn {
-  height: 60rpx;
-  display: flex;
-  justify-content: flex-end;
-  padding: 10rpx 24rpx;
-  box-sizing: border-box;
-}
-
-.container .cont_btn image {
-  height: 30rpx;
-  width: 30rpx;
-  display: block;
-  margin: 5rpx 10rpx 5rpx 0;
-}
-
-.container .cont_btn view {
-  height: 30rpx;
-  line-height: 30rpx;
-  margin: 5rpx 0;
-  font-size:28rpx;
-  font-family:PingFangSC-Regular,PingFang SC;
-  font-weight:400;
-  color:rgba(50,57,67,1);
-}
-
 .container .cont_box {
   flex: 1;
   overflow: hidden;
@@ -120,5 +95,5 @@ page {
 }
 
 .container .cont_box .right .right_box {
-  padding-bottom: 20rpx;
+  padding-top: 4rpx;
 }

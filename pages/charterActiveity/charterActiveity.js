@@ -1,11 +1,10 @@
-// pages/signupactiveity/signupactiveity.js
+// pages/charterActiveity/charterActiveity.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    navIndex: '0',
     activeityList: [
       {
         title: '揭阳同乡会篮球队招募新生',
@@ -20,16 +19,8 @@ Page({
         infoTxt: '春天是一年中最美的季节,是学生踏青春游的好季节。通过踏青春游活动,让学生亲密接触大自然',
         people: '刘哒哒',
         time: '2020-5-20'
-      },
-      {
-        title: '揭阳同乡会举办书法大赛',
-        src: '../../assets/images/shufa.jpg',
-        infoTxt: '为继承和发扬我国书法艺术传统，弘扬爱国主义精神，我们将承办的现场书法大赛',
-        people: '廖哒哒',
-        time: '2020-5-10'
       }
     ],
-    formats: {}
   },
 
   /**
@@ -52,46 +43,9 @@ Page({
   onShow: function () {
 
   },
-  navClick(e) {
-    let index = e.currentTarget.dataset.index
-    this.setData({
-      navIndex: index
-    })
-  },
-  format(e) {
-    let { name, value } = e.target.dataset
-    if (!name) return
-    // console.log('format', name, value)
-    this.editorCtx.format(name, value)
-
-  },
-  onStatusChange (e) {
-    const formats = e.detail
-    this.setData({ formats })
-  },
-  onEditorReady (e) {
-    let that = this
-    wx.createSelectorQuery().select('#editor').context(function (res) {
-      that.editorCtx = res.context
-    }).exec()
-  },
-  insertImage() {
-    const that = this
-    wx.chooseImage({
-      count: 1,
-      success: function (res) {
-        that.editorCtx.insertImage({
-          src: res.tempFilePaths[0],
-          data: {
-            id: 'abcd',
-            role: 'god'
-          },
-          width: '80%',
-          success: function () {
-            console.log('insert image success')
-          }
-        })
-      }
+  toReleaseActiveity () {
+    wx.navigateTo({
+      url: '/pages/releaseActiveity/releaseActiveity',
     })
   },
   /**

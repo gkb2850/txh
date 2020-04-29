@@ -4,7 +4,7 @@
   padding: 20rpx 24rpx;
   box-sizing: border-box;
   box-shadow:2px 0px 4px 0px #ccc;
-  margin-top: 24rpx;
+  margin-bottom: 24rpx;
   border-left: 2rpx solid #ccc;
   border-right: 2rpx solid #ccc;
 }

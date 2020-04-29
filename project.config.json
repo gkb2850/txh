@@ -114,6 +114,26 @@
 					"pathName": "pages/signupactiveity/signupactiveity",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/releaseActiveity/releaseActiveity",
+					"pathName": "pages/releaseActiveity/releaseActiveity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/charterActiveity/charterActiveity",
+					"pathName": "pages/charterActiveity/charterActiveity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activeityDetail/activeityDetail",
+					"pathName": "pages/activeityDetail/activeityDetail",
+					"scene": null
 				}
 			]
 		}

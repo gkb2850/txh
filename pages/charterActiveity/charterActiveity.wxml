@@ -2,14 +2,14 @@
   <view class="title">
     <view class="txt">
       <image src="../../assets/images/huodong.png"></image>
-      <view>我发布的行程</view>
+      <view>我发布的活动</view>
     </view>
-    <view class="btn" bindtap="toReleaseCar">
+    <view class="btn" bindtap="toReleaseActiveity">
       <image src="../../assets/images/add_icon.png"></image>
       <view>发布</view>
     </view>
   </view>
   <view class="cont">
-    <v-carticket status="2"></v-carticket>
+    <v-activeity data="{{activeityList}}"></v-activeity>
   </view>
 </view>

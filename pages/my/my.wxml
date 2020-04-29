@@ -35,7 +35,7 @@
       </navigator>
     </view>
     <view class="item_box">
-      <navigator url="" hover-class="none">
+      <navigator url="/pages/signupactiveity/signupactiveity" hover-class="none">
         <image src="../../assets/images/myactivity_icon.png"></image>
         <view class="right_box">
           <view>我的活动</view>
@@ -53,7 +53,7 @@
       </navigator>
     </view>
     <view class="item_box">
-      <navigator url="" hover-class="none">
+      <navigator url="/pages/charterActiveity/charterActiveity" hover-class="none">
         <image src="../../assets/images/activitymanage_iocn.png"></image>
         <view class="right_box">
           <view>活动管理</view>

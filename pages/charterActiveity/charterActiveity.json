@@ -2,5 +2,5 @@
   "usingComponents": {
     "v-activeity":"../../component/activeity/activeity"
   },
-  "navigationBarTitleText": "我的活动"
+  "navigationBarTitleText": "活动管理"
 }

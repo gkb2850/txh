@@ -3,10 +3,6 @@
     <image src="../../assets/images/search_icon.png"></image>
     <input placeholder="搜索车票"></input>
   </view>
-  <view class="cont_btn" bindtap="toReleaseCar">
-    <image src="../../assets/images/add_icon.png"></image>
-    <view>发布</view>
-  </view>
   <view class="cont_box">
     <view class="left">
       <scroll-view style="height:100%;" scroll-y>
@@ -21,7 +17,7 @@
     <view class="right">
       <scroll-view style="height: 100%;" scroll-y>
         <view class="right_box">
-          <v-caritem carticketList="{{carticketList}}"></v-caritem>
+          <v-caritem data="{{carticketList}}"></v-caritem>
         </view>
       </scroll-view>
     </view>
