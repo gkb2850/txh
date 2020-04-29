@@ -40,6 +40,23 @@ Page({
       url: '/pages/register/register',
     })
   },
+
+  toSeePhone() {
+    wx.showActionSheet({
+      itemList: ['会长电话：2222222222'],
+      success(res) {
+        console.log(res.tapIndex)
+        if (res.tapIndex === 0) {
+          wx.makePhoneCall({
+            phoneNumber: '2222222222'
+          })
+        }
+      },
+      fail(res) {
+        console.log(res.errMsg)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

@@ -12,7 +12,7 @@ page {
 }
 
 .container .title {
-  margin: 8rpx 24rpx 12rpx 24rpx;
+  margin: 8rpx 0 24rpx 24rpx;
   height: 72rpx;
   display: flex;
   background: #F5F8FC;

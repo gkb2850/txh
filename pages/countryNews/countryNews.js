@@ -64,26 +64,6 @@ Page({
   onShow: function () {
 
   },
-  toSeePhone () {
-    wx.showActionSheet({
-      itemList: ['会长电话：2222222222', '管理员电话：333333333333'],
-      success(res) {
-        console.log(res.tapIndex)
-        if (res.tapIndex === 0) {
-          wx.makePhoneCall({
-            phoneNumber: '2222222222'
-          })
-        } else {
-          wx.makePhoneCall({
-            phoneNumber: '33333333'
-          })
-        }
-      },
-      fail(res) {
-        console.log(res.errMsg)
-      }
-    })
-  },
   /**
    * 生命周期函数--监听页面隐藏
    */

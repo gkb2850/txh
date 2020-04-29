@@ -1,6 +1,6 @@
 <view class="container">
   <view class="top">
-    <view class="login_no" wx:if="{{false}}">
+    <view class="login_no" wx:if="{{true}}">
       <image src="../../assets/images/userPeople_icon.png"></image>
       <view class="right_txt">
         <view class="lgoin_txt" bindtap="toLogin">登录</view>
@@ -39,6 +39,15 @@
         <image src="../../assets/images/myactivity_icon.png"></image>
         <view class="right_box">
           <view>我的活动</view>
+          <image src="../../assets/images/toright_icon.png"></image>
+        </view>
+      </navigator>
+    </view>
+    <view class="item_box" bindtap="toSeePhone">
+      <navigator hover-class="none">
+        <image src="../../assets/images/myactivity_icon.png"></image>
+        <view class="right_box">
+          <view>会长电话</view>
           <image src="../../assets/images/toright_icon.png"></image>
         </view>
       </navigator>
