@@ -45,7 +45,7 @@
     </view>
     <view class="item_box" bindtap="toSeePhone">
       <navigator hover-class="none">
-        <image src="../../assets/images/myactivity_icon.png"></image>
+        <image src="../../assets/images/iphone_icon.png"></image>
         <view class="right_box">
           <view>会长电话</view>
           <image src="../../assets/images/toright_icon.png"></image>

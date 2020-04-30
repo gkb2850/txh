@@ -66,7 +66,7 @@ Page({
       success(res) {
         console.log(res)
         that.setData({
-          'register.userImg': res.tempFilePaths[0]
+          'register.userImg': 'data:image/png;base64,' + wx.getFileSystemManager().readFileSync(res.tempFilePaths[0], 'base64')
         })
       }
     })

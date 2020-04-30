@@ -22,7 +22,7 @@
     <view class="txt_title">性别:</view>
     <view class="right">
       <radio-group class="radio_group" bindchange="radioChange">
-        <radio class="radioSex" wx:for-items="{{sexList}}" wx:key="name" value="{{register.sex}}" checked="{{item.checked}}">
+        <radio class="radioSex" wx:for-items="{{sexList}}" wx:key="name" color="#2D82FF" value="{{register.sex}}" checked="{{item.checked}}">
           <text>{{item.name}}</text>
         </radio>
       </radio-group>

@@ -1,7 +1,7 @@
 <view class="container">
   <view class="title">
     <view class="txt">
-      <image src="../../assets/images/huodong.png"></image>
+      <image src="../../assets/images/hangchengjilu.png"></image>
       <view>我发布的行程</view>
     </view>
     <view class="btn" bindtap="toReleaseCar">

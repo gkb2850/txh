@@ -47,6 +47,7 @@ Page({
 
   },
   changeMyInfo (e) {
+    let that = this
     let type = e.currentTarget.dataset.type
     if (type === 'userImg') {
       wx.chooseImage({
@@ -54,7 +55,9 @@ Page({
         sizeType: ['original', 'compressed'],
         sourceType: ['album'],
         success(res) {
-          const tempFilePaths = res.tempFilePaths
+          that.setData({
+            'register.userImg': 'data:image/png;base64,' + wx.getFileSystemManager().readFileSync(res.tempFilePaths[0], 'base64')
+          })
         }
       })
     } else if (type === 'name') {

@@ -12,17 +12,6 @@
         </view>
       </view>
     </view>
-    <view class="item_box item_boxnum">
-      <view class="left">
-        <image src="../../assets/images/ren.png"></image>
-      </view>
-      <view class="right">
-        <view class="origin">
-          <view class="top_txt">负责人</view>
-          <input type="text" placeholder="填写负责人"></input>
-        </view>
-      </view>
-    </view>
     <view class="item_box">
       <view class="left">
         <image src="../../assets/images/gerenjianjie.png"></image>
@@ -50,6 +39,28 @@
           <picker class="picker_box" mode="date" value="{{ticketData.lastDay}}" start="2020-04-01" end="2022-08-01" bindchange="bindDateChange" data-type="lastDay">
             <view class="picker">{{ticketData.lastDay}}</view>
           </picker>
+        </view>
+      </view>
+    </view>
+    <view class="item_box item_boxnum">
+      <view class="left">
+        <image src="../../assets/images/ren.png"></image>
+      </view>
+      <view class="right">
+        <view class="origin">
+          <view class="top_txt">负责人</view>
+          <input type="text" placeholder="填写负责人"></input>
+        </view>
+      </view>
+    </view>
+    <view class="item_box item_boxnum">
+      <view class="left">
+        <image src="../../assets/images/iphone_icon.png"></image>
+      </view>
+      <view class="right">
+        <view class="origin">
+          <view class="top_txt">联系电话</view>
+          <input type="text" placeholder="填写联系电话" type="number"></input>
         </view>
       </view>
     </view>

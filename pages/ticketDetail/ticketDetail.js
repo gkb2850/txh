@@ -82,7 +82,8 @@ Page({
     allPeopleNum: 0,
     signInNum: 0,
     selectImging: '../../assets/images/dagouyouquana.png',
-    selectImg: '../../assets/images/dagouyouquanb.png'
+    selectImg: '../../assets/images/dagouyouquanb.png',
+    allSelect: true
   },
 
   /**
@@ -127,11 +128,12 @@ Page({
   signInPeopleAll () {
     let data = this.data.peopleList
     data.forEach(i => {
-      i.select = true
+      i.select = this.data.allSelect
     })
     this.setData({
       peopleList: data,
-      signInNum: this.data.peopleList.length
+      signInNum: this.data.allSelect ? this.data.peopleList.length: 0,
+      allSelect: !this.data.allSelect
     })
   },
   /**
