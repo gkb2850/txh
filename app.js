@@ -1,7 +1,9 @@
 //app.js
 import * as ajax from './http/index.js'
+import * as alert from './utils/alert.js'
 App({
   ajax: ajax,
+  alert: alert,
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []

@@ -1,11 +1,15 @@
 // pages/login/login.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    loginData: {
+      userName: '',
+      passWord: ''
+    }
   },
 
   /**
@@ -32,6 +36,21 @@ Page({
   toRegister () {
     wx.navigateTo({
       url: '/pages/register/register',
+    })
+  },
+  // 登录
+  toLogin () {
+    if (!this.data.loginData.userName && !this.data.loginData.passWord) {
+      app.alert.error('请填写完整')
+      return
+    }
+    let data = {
+
+    }
+    app.ajax.loginFeach(data).then(res => {
+      console.log(res)
+    }).catch(err => {
+      console.log(err)
     })
   },
   /**

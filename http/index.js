@@ -1,4 +1,6 @@
 import {requestUrl} from './request.js'
 
-const baseUrl = 'http://192.168.31.97:8080'
+const baseUrl = 'http://sun.buxiaosheng.com'
+
+export const loginFeach = (data) =>  requestUrl(baseUrl + '' , data, 'get');//登录接口
 
