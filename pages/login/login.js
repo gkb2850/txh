@@ -38,6 +38,19 @@ Page({
       url: '/pages/register/register',
     })
   },
+  inputUserName (e) {
+    console.log(e)
+    let value = e.detail.value
+    this.setData({
+      'loginData.userName': value
+    })
+  },
+  inputPassWord (e) {
+    let value = e.detail.value
+    this.setData({
+      'loginData.passWord': value
+    })
+  },
   // 登录
   toLogin () {
     if (!this.data.loginData.userName && !this.data.loginData.passWord) {
@@ -45,8 +58,10 @@ Page({
       return
     }
     let data = {
-
+      loginname: this.data.loginData.userName,
+      password: this.data.loginData.passWord
     }
+    console.log(data)
     app.ajax.loginFeach(data).then(res => {
       console.log(res)
     }).catch(err => {
