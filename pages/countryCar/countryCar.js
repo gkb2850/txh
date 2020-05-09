@@ -1,4 +1,5 @@
 // pages/countryCar/countryCar.js
+const app = getApp()
 Page({
 
   /**
@@ -78,7 +79,8 @@ Page({
         money: '60',
         num: 45
       }
-    ]
+    ],
+    search: ''
   },
 
   /**
@@ -110,6 +112,24 @@ Page({
   toReleaseCar () {
     wx.navigateTo({
       url: '/pages/releaseCartxt/releaseCartxt',
+    })
+  },
+  //获取车票
+  getTxhCarList () {
+    let data = {
+      search: this.data.search,
+      txhid: ''
+    }
+    app.ajax.bugtilistFeach(data).then(res => {
+      console.log(res)
+    }).catch(err => {
+      app.alert.error(err.msg)
+    })
+  },
+  inputsearch (e) {
+    let value = e.detail.value
+    this.setData({
+      search: value
     })
   },
   /**

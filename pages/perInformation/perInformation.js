@@ -1,4 +1,5 @@
 // pages/perInformation/perInformation.js
+const app = getApp()
 Page({
 
   /**
@@ -16,7 +17,6 @@ Page({
       classtxt: '软件',
       majortxt: '软件技术',
       password: '',
-      passwords: ''
     },
     sexList:['男','女'],
     hometownList: ['广东', '梅州', '五华', '华城'],
@@ -30,7 +30,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getMyInfo()
   },
 
   /**
@@ -45,6 +45,17 @@ Page({
    */
   onShow: function () {
 
+  },
+  // 获取个人信息
+  getMyInfo() {
+    let data = {
+      id: 1
+    }
+    app.ajax.getMyInfoFeach(data).then(res => {
+      console.log(res)
+    }).catch(err => {
+      console.log(err)
+    })
   },
   changeMyInfo (e) {
     let that = this
@@ -103,6 +114,30 @@ Page({
         'register.sex': this.data.sexList[value]
       })
     }
+  },
+  //修改个人信息
+  changeOneInfo () {
+    let data = {
+      id: '',
+      name: this.data.register.name,
+      loginname: '',
+      password: this.data.register.password,
+      img: '',
+      phone: this.data.register.phone,
+      sex: this.data.register.sex,
+      address: this.data.register.address,
+      nianji: this.data.register.nianji,
+      yuanxi: this.data.register.yuanxi,
+      banji: this.data.register.banji,
+      zhuanye: this.data.register.zhuanye,
+      huizhang: '',
+      txhname: ''
+    }
+    app.ajax.changeOneInfoFeach(data).then(res => {
+      app.alert.error(res.msg)
+    }).catch(err => {
+      app.alert.error(err.msg)
+    })
   },
   /**
    * 生命周期函数--监听页面隐藏

@@ -1,4 +1,5 @@
 // pages/releaseCartxt/releaseCartxt.js
+const app = getApp()
 Page({
 
   /**
@@ -6,10 +7,15 @@ Page({
    */
   data: {
     ticketData:{
+      geton: '',
+      getoff: '',
       firstDay: '填写预约日期',
       lastDay: '填写结束日期',
       startDay: '填写发车日期',
-      startTime: '填写发车时间'
+      startTime: '填写发车时间',
+      banci: '',
+      num: '',
+      price: ''
     },
     timeDataArray: [[],[]]
   },
@@ -55,6 +61,66 @@ Page({
         'ticketData.startTime': value
       })
     }
+  },
+  // 发布车票
+  fabuCarPiao () {
+    if (this.data.ticketData.firstDay === '填写预约日期' || this.data.ticketData.lastDay === '填写结束日期' || this.data.ticketData.startDay === '填写发车日期' || this.data.ticketData.startTime === '填写发车时间' || this.data.ticketData.num === '' || this.data.ticketData.price === '' || this.data.ticketData.geton === '' || this.data.ticketData.getoff === '') {
+      app.alert.error('请填写完整')
+      return
+    }
+    console.log(this.data.ticketData)
+    let data = {
+      id: '',
+      menid: '',
+      memname: '',
+      txhid: '',
+      txhname: '',
+      onbus: this.data.ticketData.geton,
+      offbus: this.data.ticketData.getoff,
+      maketime: this.data.ticketData.firstDay,
+      endtime: this.data.ticketData.lastDay,
+      starttime: this.data.ticketData.startDay + this.data.ticketData.startTime,
+      banci: this.data.ticketData.banci,
+      num: this.data.ticketData.num,
+      price: this.data.ticketData.price,
+      endnum: 0
+    }
+    app.ajax.fachepiaoFeach(data).then(res => {
+      console.log(res)
+      app.alert.error(res.msg)
+    }).catch(err => {
+      app.alert.error(err.msg)
+    })
+  },
+  inputprice (e) {
+    let value = e.detail.value
+    this.setData({
+      'ticketData.price': value
+    })
+  },
+  inputnum(e) {
+    let value = e.detail.value
+    this.setData({
+      'ticketData.num': value
+    })
+  },
+  inputbanci(e) {
+    let value = e.detail.value
+    this.setData({
+      'ticketData.banci': value
+    })
+  },
+  inputgeton (e) {
+    let value = e.detail.value
+    this.setData({
+      'ticketData.geton': value
+    })
+  },
+  inputgetoff(e) {
+    let value = e.detail.value
+    this.setData({
+      'ticketData.getoff': value
+    })
   },
   /**
    * 生命周期函数--监听页面隐藏

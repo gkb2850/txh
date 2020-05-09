@@ -1,4 +1,5 @@
 // pages/charterCar/charterCar.js
+const app = getApp()
 Page({
 
   /**
@@ -31,6 +32,17 @@ Page({
   toReleaseCar () {
     wx.navigateTo({
       url: '/pages/releaseCartxt/releaseCartxt',
+    })
+  },
+  // 车票列表
+  getCarList () {
+    let data = {
+      txhname: ''
+    }
+    app.ajax.ticketlistFeach(data).then(res => {
+      console.log(res)
+    }).catch(err => {
+      console.log(err)
     })
   },
   /**

@@ -1,4 +1,5 @@
 // pages/carTicketList/carTicketList.js
+const app = getApp()
 Page({
 
   /**
@@ -32,6 +33,17 @@ Page({
     let index = e.currentTarget.dataset.index
     this.setData({
       navIndex: index
+    })
+  },
+  getMyCarList () {
+    let data = {
+      memid: '',
+      type: this.data.navIndex === '0' ? 0 : 1
+    }
+    app.ajax.myticketlistFeach(data).then(res => {
+      console.log(res)
+    }).catch(err => {
+      app.alert.error(msg)
     })
   },
   /**

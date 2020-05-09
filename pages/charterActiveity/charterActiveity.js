@@ -48,6 +48,17 @@ Page({
       url: '/pages/releaseActiveity/releaseActiveity',
     })
   },
+  // 活动列表
+  getActiveList () {
+    let data = {
+      name: ''
+    }
+    app.ajax.huodonglistFeach(data).then(res => {
+      app.alert.error(res.msg)
+    }).catch(err => {
+      app.alert.error(err.msg)
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

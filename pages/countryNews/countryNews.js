@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    search: '',
     activeityList: [
       {
         title: '揭阳同乡会篮球队招募新生',
@@ -63,6 +64,23 @@ Page({
    */
   onShow: function () {
 
+  },
+  // 获取同乡会活动
+  gettxhActive () {
+    let data = {
+      name: ''
+    }
+    app.ajax.huodongFeach(data).then(res => {
+      console.log(res)
+    }).catch(err => {
+      app.alert.error(err.msg)
+    })
+  },
+  inputsearch (e) {
+    let value = e.detail.value
+    this.setData({
+      search: value
+    })
   },
   /**
    * 生命周期函数--监听页面隐藏

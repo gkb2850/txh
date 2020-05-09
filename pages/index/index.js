@@ -52,6 +52,25 @@ Page({
     ]
   },
   onLoad: function () {
-    
+    this.getIndexZixunList()
+    this.getIndexList()
   },
+  onShow: function () {
+
+  },
+  //获取首页资讯
+  getIndexZixunList () {
+    app.ajax.zixunFeach().then(res => {
+      console.log(res)
+    }).catch(err => {
+      console.log(err)
+    })
+  },
+  getIndexList() {
+    app.ajax.indexFeach().then(res => {
+      console.log(res)
+    }).catch(err => {
+      console.log(err)
+    })
+  }
 })

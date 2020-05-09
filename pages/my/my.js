@@ -1,11 +1,12 @@
 // pages/my/my.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    huizhangPhone: ''
   },
 
   /**
@@ -43,7 +44,7 @@ Page({
 
   toSeePhone() {
     wx.showActionSheet({
-      itemList: ['会长电话：2222222222'],
+      itemList: ['会长电话：' + this.data.huizhangPhone],
       success(res) {
         console.log(res.tapIndex)
         if (res.tapIndex === 0) {
@@ -55,6 +56,20 @@ Page({
       fail(res) {
         console.log(res.errMsg)
       }
+    })
+  },
+  // 获取会长电话
+  gethuizhangPhone () {
+    let data = {
+      txhname: ''
+    }
+    app.ajax.huizhangphoneFeach(data).then(res => {
+      console.log(res)
+      this.setData({
+        huizhangPhone: res.data
+      })
+    }).catch(err => {
+      console.log(err)
     })
   },
   /**

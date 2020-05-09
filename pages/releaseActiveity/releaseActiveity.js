@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    ticketData: {
+    acitveData: {
       firstDay: '填写开始时间',
       lastDay: '填写结束时间',
     },
@@ -87,12 +87,34 @@ Page({
     let that = this
     this.editorCtx.getContents({
       success: res => {
-        console.log(res.html)
         that.setData({
           nodes: res.html
         })
       }
     })
+    let data = {
+      id: '',
+      title: this.data.acitveData.title,
+      intro: this.data.acitveData.intro,
+      menid: '',
+      memname: '',
+      starttime: this.data.acitveData.starttime,
+      endtime: this.data.acitveData.endtime,
+      phone: this.data.acitveData.phone,
+      name: '',
+      address: '',
+      createby: ''
+    }
+    app.alert.fatxhFeach(data).then(res => {
+      app.alert.error(res.msg)
+    }).catch(err => {
+      app.alert.error(err.msg)
+    })
+
+  },
+  // 发布活动
+  setActiveInfo () {
+    
   },
   /**
    * 生命周期函数--监听页面隐藏

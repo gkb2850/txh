@@ -61,7 +61,6 @@ Page({
       loginname: this.data.loginData.userName,
       password: this.data.loginData.passWord
     }
-    console.log(data)
     app.ajax.loginFeach(data).then(res => {
       console.log(res)
     }).catch(err => {

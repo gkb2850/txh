@@ -10,10 +10,15 @@ Page({
       name: '',
       phone: '',
       sex: '0',
+      hometownId: '',
       hometown:'请选择',
+      gradetxtId: '',
       gradetxt: '请选择',
+      collegestxtId: '',
       collegestxt:'请选择',
+      classtxtId: '',
       classtxt:'请选择',
+      majortxtId: '',
       majortxt:'请选择',
       accNum:'',
       password: '',
@@ -23,18 +28,222 @@ Page({
       { name: '男', value: '0', checked: 'true' },
       { name: '女', value: '1' }
     ],
-    hometownList: ['广东', '梅州', '五华', '华城'],
+    hometownListObj: [ 
+      {
+        name: '广州',
+        id: 1
+      },
+      {
+        name: '深圳',
+        id: 2
+      },
+      {
+        name: '珠海',
+        id: 3
+      },
+      {
+        name: '汕头',
+        id: 4
+      }, 
+      {
+        name: '佛山',
+        id: 5
+      },
+      {
+        name: '韶关',
+        id: 6
+      },
+      {
+        name: '湛江',
+        id: 7
+      },
+      {
+        name: '肇庆',
+        id: 8
+      },
+      {
+        name: '江门',
+        id: 9
+      },
+      {
+        name: '茂名',
+        id: 10
+      },
+      {
+        name: '惠州',
+        id: 11
+      },
+      {
+        name: '梅州',
+        id: 12
+      },
+      {
+        name: '汕尾',
+        id: 13
+      },
+      {
+        name: '河源',
+        id: 14
+      },
+      {
+        name: '阳江',
+        id: 15
+      },
+      {
+        name: '清远',
+        id: 16
+      },
+      {
+        name: '东莞',
+        id: 17
+      },
+      {
+        name: '中山',
+        id: 18
+      },
+      {
+        name: '潮州',
+        id: 19
+      },
+      {
+        name: '揭阳',
+        id: 20
+      },
+      {
+        name: '云浮',
+        id: 21
+      }],
+    hometownList: ['广州', '深圳','珠海','汕头','佛山','韶关','湛江','肇庆','江门','茂名','惠州','梅州','汕尾','河源','阳江','清远','东莞','中山','潮州','揭阳','云浮'],
+    gradetxtListObj: [
+      {
+        name: '大四',
+        id: 1
+      },
+      {
+        name: '大三',
+        id: 1
+      },
+      {
+        name: '大二',
+        id: 1
+      },
+      {
+        name: '大一',
+        id: 1
+      }],
     gradetxtList: ['大四', '大三', '大二', '大一'],
-    collegestxtList: ['建筑', '机电', '信息', '外语'],
-    classtxtList: ['电商', '计网', '软件', '信息'],
-    majortxtList: ['计算机','软件','网络技术','前端开发'],
+    collegestxtListObj: [
+      {
+        name: '建筑',
+        id: 1
+      },
+      {
+        name: '机电',
+        id: 2
+      },
+      {
+        name: '信息',
+        id: 3
+      },
+      {
+        name: '外语',
+        id: 4
+      },
+      {
+        name: '人文',
+        id: 5
+      },
+      {
+        name: '幼师',
+        id: 6
+      }],
+    collegestxtList: ['建筑','机电','信息','外语','人文','幼师'],
+    classtxtListObj: [
+      {
+        name: '电商班',
+        id: 1
+      },
+      {
+        name: '计算机网络技术班',
+        id: 2
+      },
+      {
+        name: '软件开发班',
+        id: 3
+      },
+      {
+        name: '商务英语班',
+        id: 4
+      },
+      {
+        name: '学前教育班',
+        id: 5
+      },
+      {
+        name: '建筑班',
+        id: 6
+      },
+      {
+        name: '机电班',
+        id: 7
+      }],
+    classtxtList: ['电商班','计算机网络技术班','软件开发班','商务英语班','学前教育班','建筑班','机电班'],
+    majortxtListObj: [
+      {
+        name: '计算机网络技术',
+        id: 1
+      },
+      {
+        name: '软件开发',
+        id: 2
+      },
+      {
+        name: '商务英语',
+        id: 3
+      },
+      {
+        name: '学前教育',
+        id: 4
+      },
+      {
+        name: '电商',
+        id: 5
+      },
+      {
+        name: '程序设计',
+        id: 6
+      },
+      {
+        name: '传感技术',
+        id: 7
+      },
+      {
+        name: '大学物理',
+        id: 8
+      }],
+    majortxtList: ['计算机网络技术','商务英语','学前教育','电商','程序设计','传感技术','大学物理']
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
+    let data = wx.getStorageSync('register')
+    if (!data) {
+      let register = {}
+      register.hometownListObj = this.data.hometownListObj
+      register.hometownList = this.data.hometownList
+      register.gradetxtListObj = this.data.gradetxtListObj
+      register.gradetxtList = this.data.gradetxtList
+      register.collegestxtListObj = this.data.collegestxtListObj
+      register.collegestxtList = this.data.collegestxtList
+      register.classtxtListObj = this.data.classtxtListObj
+      register.classtxtList = this.data.classtxtList
+      register.majortxtListObj = this.data.majortxtListObj
+      register.majortxtList = this.data.majortxtList
+      wx.setStorageSync('register', register)
+    } 
   },
 
   /**
@@ -122,31 +331,36 @@ Page({
   bindPickerChangeHometown (e) {
     let value = e.detail.value
     this.setData({
-      'register.hometown': this.data.hometownList[value]
+      'register.hometown': this.data.hometownList[value],
+      'register.hometownId': this.data.hometownList[value].id
     })
   },
   bindPickerChangeGradetxt(e) {
     let value = e.detail.value
     this.setData({
-      'register.gradetxt': this.data.gradetxtList[value]
+      'register.gradetxt': this.data.gradetxtList[value],
+      'register.gradetxtId': this.data.gradetxtList[value].id
     })
   },
   bindPickerChangeCollegestxt(e) {
     let value = e.detail.value
     this.setData({
-      'register.collegestxt': this.data.collegestxtList[value]
+      'register.collegestxt': this.data.collegestxtList[value],
+      'register.collegestxtId': this.data.collegestxtList[value].id
     })
   },
   bindPickerChangeClasstxt(e) {
     let value = e.detail.value
     this.setData({
-      'register.classtxt': this.data.classtxtList[value]
+      'register.classtxt': this.data.classtxtList[value],
+      'register.classtxtId': this.data.classtxtList[value].id
     })
   },
   bindPickerChangeMajortxt(e) {
     let value = e.detail.value
     this.setData({
-      'register.majortxt': this.data.majortxtList[value]
+      'register.majortxt': this.data.majortxtList[value],
+      'register.majortxtId': this.data.majortxtList[value].id
     })
   },
   //注册

@@ -1,4 +1,4 @@
-export const requestUrl = (data = {}, url, type) => {
+export const requestUrl = (url, data = {}, type) => {
   return new Promise((resolve, reject) => {
     wx.request({
       header: {

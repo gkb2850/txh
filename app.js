@@ -1,8 +1,8 @@
 //app.js
-import * as ajax from './http/index.js'
+import * as Ajax from './http/index.js'
 import * as alert from './utils/alert.js'
 App({
-  ajax: ajax,
+  ajax: Ajax,
   alert: alert,
   onLaunch: function () {
     // 展示本地存储能力
