@@ -2,9 +2,10 @@ export const requestUrl = (url, data = {}, type) => {
   return new Promise((resolve, reject) => {
     wx.request({
       header: {
-        'content-type': 'application/x-www-form-urlencoded'
+        'content-type':'application/x-www-form-urlencoded'
       },
       url: url,
+      data: data,
       method: type,
       success: res =>{
         resolve(res.data)

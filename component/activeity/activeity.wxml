@@ -1,17 +1,17 @@
-<view class="container" wx:for="{{data}}" wx:key="index" bindtap="toActiveityDetail">
+<view class="container" wx:for="{{data}}" wx:key="index" bindtap="toActiveityDetail" data-id="{{item.id}}">
   <view class="left">
-    <image src="{{item.src}}"></image>
+    <image src="{{item.img}}"></image>
   </view>
   <view class="right">
     <view class="title">主题: {{item.title}}</view>
-    <view class="brief_txt">{{item.infoTxt}}</view>
+    <view class="brief_txt">{{item.intro}}</view>
     <view class="people">
       <view>负责人:</view>
-      <view>{{item.people}}</view>
+      <view>{{item.name}}</view>
     </view>
     <view class="time">
       <view>活动时间:</view>
-      <view>{{item.time}}</view>
+      <view>{{item.starttime}}</view>
     </view>
   </view>
 </view>

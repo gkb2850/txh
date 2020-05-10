@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userData: {},
+    carList: []
   },
 
   /**
@@ -27,7 +28,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let userInfo = wx.getStorageSync('userInfo')
+    this.setData({
+      userData: userInfo
+    })
+    this.getCarList()
   },
   toReleaseCar () {
     wx.navigateTo({
@@ -37,11 +42,18 @@ Page({
   // 车票列表
   getCarList () {
     let data = {
-      txhname: ''
+      txhname: this.data.userData.txhname
     }
+    app.alert.loading()
     app.ajax.ticketlistFeach(data).then(res => {
       console.log(res)
+      this.setData({
+        carList: res.data
+      })
+      app.alert.hideloading()
     }).catch(err => {
+      app.alert.hideloading()
+      app.alert.error(err.msg)
       console.log(err)
     })
   },

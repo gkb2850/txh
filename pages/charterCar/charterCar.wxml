@@ -10,6 +10,8 @@
     </view>
   </view>
   <view class="cont">
-    <v-carticket status="2"></v-carticket>
+    <block wx:for="{{carList}}" wx:key="index">
+          <v-carticket cardata="{{item}}"  status="2"></v-carticket>
+    </block>
   </view>
 </view>

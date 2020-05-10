@@ -5,20 +5,20 @@
   </view>
   <view class="info_box">
     <view class="start_time">
-      <view>2020-4-28 18:30</view>
+      <view>{{carInfoData.ticket.starttime}}</view>
       <view>发车</view>
     </view>
     <view class="items_address">
-      <view class="txt">天河客运站</view>
+      <view class="txt">{{carInfoData.ticket.onbus}}</view>
       <view class="line"></view>
-      <view class="txt">清远</view>
+      <view class="txt">{{carInfoData.ticket.offbus}}</view>
     </view>
     <view class="make_time">
-      <view>预约时间: 2020-04-28</view>
-      <view>结束时间: 2020-04-28</view>
+      <view>预约时间: {{carInfoData.ticket.maketime}}</view>
+      <view>结束时间: {{carInfoData.ticket.endtime}}</view>
     </view>
     <view class="info_txt">
-      <view>哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒哒</view>
+      <view>{{carInfoData.ticket.banci}}</view>
     </view>
   </view>
   <view class="cont">
@@ -27,9 +27,9 @@
       <view class="btn" bindtap="signInPeopleAll">签到全部</view>
     </view>
     <view class="people_box">
-      <view class="name_box" wx:for="{{peopleList}}" wx:key="index" bindtap="signInPeople" data-index="{{index}}">
-        <view class="name {{item.select ? 'nameactive':''}}">{{item.name}}</view>
-        <image src="{{item.select?selectImging:selectImg}}"></image>
+      <view class="name_box" wx:for="{{carInfoData.ticketuserlinks}}" wx:key="index" bindtap="signInPeople" data-index="{{index}}">
+        <view class="name {{item.qiandao === '已签到'? 'nameactive':''}}">{{item.memname}}</view>
+        <image src="{{item.qiandao === '已签到'?selectImging:selectImg}}"></image>
       </view>
     </view>
     <view class="num_box">

@@ -1,96 +1,27 @@
 // pages/ticketDetail/ticketDetail.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    peopleList: [
-      {
-        name:'古达达',
-        select: false
-      },
-      {
-        name: '古达达',
-        select: false
-      },
-      {
-        name: '古达达',
-        select: false
-      },
-      {
-        name: '古达达',
-        select: false
-      },
-      {
-        name: '古达达',
-        select: false
-      },
-      {
-        name: '古达达',
-        select: false
-      },
-      {
-        name: '古达达',
-        select: false
-      },
-      {
-        name: '古达达',
-        select: false
-      },
-      {
-        name: '古达达',
-        select: false
-      },
-      {
-        name: '古达达',
-        select: false
-      },
-      {
-        name: '古达达',
-        select: false
-      },
-      {
-        name: '古达达',
-        select: false
-      },
-      {
-        name: '古达达',
-        select: false
-      },
-      {
-        name: '古达达',
-        select: false
-      },
-      {
-        name: '古达达',
-        select: false
-      },
-      {
-        name: '古达达',
-        select: false
-      },
-      {
-        name: '古达达',
-        select: false
-      },
-      {
-        name: '古达达',
-        select: false
-      }
-    ],
     allPeopleNum: 0,
     signInNum: 0,
     selectImging: '../../assets/images/dagouyouquana.png',
     selectImg: '../../assets/images/dagouyouquanb.png',
-    allSelect: true
+    id: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if (options.id) {
+      this.setData({
+        id: options.id
+      })
+    }
   },
 
   /**
@@ -104,36 +35,90 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getCarInfo()
   },
   signInPeople (e) {
     let index = e.currentTarget.dataset.index
-    let data = this.data.peopleList[index]
-    data.select = !data.select
-    let dataStr = 'peopleList['+ index +']'
+    let data = this.data.carInfoData.ticketuserlinks[index]
+    data.qiandao = data.qiandao === '已签到' ? '未签到' :'已签到'
+    let dataStr = 'carInfoData.ticketuserlinks['+ index +']'
     this.setData({
       [dataStr]: data
     })
     let num = 0
-    this.data.peopleList.forEach(i => {
-      if (i.select) {
+    this.data.carInfoData.ticketuserlinks.forEach(i => {
+      if (i.qiandao === '已签到') {
         num++
       }
     })
     this.setData({
       signInNum: num
     })
+    this.qiandaoNum()
   },
   // 签到所有
   signInPeopleAll () {
-    let data = this.data.peopleList
+    let data = this.data.carInfoData.ticketuserlinks
     data.forEach(i => {
-      i.select = this.data.allSelect
+      i.qiandao = '已签到'
     })
     this.setData({
-      peopleList: data,
-      signInNum: this.data.allSelect ? this.data.peopleList.length: 0,
-      allSelect: !this.data.allSelect
+      'carInfoData.ticketuserlinks': data,
+      signInNum: this.data.carInfoData.ticketuserlinks.length
+    })
+    this.qiandaoNum('all')
+  },
+  //获取汽车票详情
+  getCarInfo () {
+    let data = {
+      id:this.data.id
+    }
+    app.alert.loading()
+    app.ajax.chepiaoInfofoFeach(data).then(res => {
+      console.log(res)
+      app.alert.hideloading()
+      let data = res.data.ticketuserlinks
+      let num = 0
+      data.forEach(i => {
+        if (i.qiandao === '已签到') {
+          num++
+        }
+      })
+      this.setData({
+        carInfoData: res.data,
+        allPeopleNum: data.length ? data.length: 0,
+        signInNum:num
+      })
+    }).catch(err => {
+      console.log(err)
+      app.alert.hideloading()
+      app.alert.error(err.msg)
+    })
+  },
+  //签到
+  qiandaoNum (str) {
+    let data = {}
+    if (str === 'all') {
+      data.id = this.data.id
+    } else {
+      let arr = []
+      let arrs = []
+      this.data.carInfoData.ticketuserlinks.forEach(i => {
+        if (i.qiandao === '已签到') {
+          arr.push(i.id)
+        } else {
+          arrs.push(i.id)
+        }
+      })
+      data.id = this.data.id
+      data.userId = arr.join(',')
+      data.cancelId = arrs.join(',')
+    }
+    app.ajax.qiandaocarfoFeach(data).then(res => {
+      app.alert.error(res.msg)
+    }).catch(err => {
+      app.alert.error(err.msg)
+      this.getCarInfo()
     })
   },
   /**

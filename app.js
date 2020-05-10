@@ -4,6 +4,13 @@ import * as alert from './utils/alert.js'
 App({
   ajax: Ajax,
   alert: alert,
+  tologin: () => {
+    if (!wx.getStorageSync('userInfo')) {
+      wx.navigateTo({
+        url: '/pages/login/login',
+      })
+    }
+  },
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []

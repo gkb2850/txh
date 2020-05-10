@@ -7,7 +7,7 @@ Page({
    */
   data: {
     register: {
-      userImg: '../../assets/images/userImg.jpg',
+      userImg: '',
       name: '哒哒哒',
       phone: '15905698535',
       sex: '男',
@@ -19,11 +19,26 @@ Page({
       password: '',
     },
     sexList:['男','女'],
-    hometownList: ['广东', '梅州', '五华', '华城'],
-    gradetxtList: ['大四', '大三', '大二', '大一'],
-    collegestxtList: ['建筑', '机电', '信息', '外语'],
-    classtxtList: ['电商', '计网', '软件', '信息'],
-    majortxtList: ['计算机', '软件', '网络技术', '前端开发'],
+    hometownList: [],
+    gradetxtList: [],
+    collegestxtList: [],
+    classtxtList: [],
+    majortxtList: [],
+    userData: {
+      address: '',
+      banji: '',
+      huizhang:'',
+      img: '',
+      loginname: '',
+      name: '',
+      nianji:'',
+      password: '',
+      phone: '',
+      sex: '',
+      txhname: '',
+      yuanxi: '',
+      zhuanye: ''
+    }
   },
 
   /**
@@ -44,17 +59,34 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let register = wx.getStorageSync('register')
+    if (register) {
+      this.setData({
+        hometownList: register.hometownList,
+        gradetxtList: register.gradetxtList,
+        collegestxtList: register.collegestxtList,
+        classtxtList: register.classtxtList,
+        majortxtList: register.majortxtList,
+      })
+    }
   },
   // 获取个人信息
   getMyInfo() {
+    let userInfo = wx.getStorageSync('userInfo')
     let data = {
-      id: 1
+      id: userInfo.id
     }
+    app.alert.loading()
     app.ajax.getMyInfoFeach(data).then(res => {
       console.log(res)
+      this.setData({
+        userData: res.data
+      })
+      wx.setStorageSync('userInfo', res.data)
+      app.alert.hideloading()
     }).catch(err => {
-      console.log(err)
+      app.alert.error(err.msg)
+      app.alert.hideloading()
     })
   },
   changeMyInfo (e) {
@@ -67,8 +99,9 @@ Page({
         sourceType: ['album'],
         success(res) {
           that.setData({
-            'register.userImg': 'data:image/png;base64,' + wx.getFileSystemManager().readFileSync(res.tempFilePaths[0], 'base64')
+            'userData.img': 'data:image/png;base64,' + wx.getFileSystemManager().readFileSync(res.tempFilePaths[0], 'base64')
           })
+          that.changeOneInfo()
         }
       })
     } else if (type === 'name') {
@@ -91,52 +124,51 @@ Page({
     let value = e.detail.value
     if (type === 'hometown') {
       this.setData({
-        'register.hometown':this.data.hometownList[value]
+        'userData.address':this.data.hometownList[value]
       })
     } else if (type === 'gradetxt') {
       this.setData({
-        'register.gradetxt': this.data.gradetxtList[value]
+        'userData.nianji': this.data.gradetxtList[value]
       })
     } else if (type === 'collegestxt') {
       this.setData({
-        'register.collegestxt': this.data.collegestxtList[value]
+        'userData.yuanxi': this.data.collegestxtList[value]
       })
     } else if (type === 'classtxt') {
       this.setData({
-        'register.classtxt': this.data.classtxtList[value]
+        'userData.banji': this.data.classtxtList[value]
       })
     } else if (type === 'majortxt') {
       this.setData({
-        'register.majortxt': this.data.majortxtList[value]
+        'userData.zhuanye': this.data.majortxtList[value]
       })
     } else if (type === 'sex') {
       this.setData({
-        'register.sex': this.data.sexList[value]
+        'userData.sex': this.data.sexList[value]
       })
     }
+
+    this.changeOneInfo()
+
   },
   //修改个人信息
   changeOneInfo () {
-    let data = {
-      id: '',
-      name: this.data.register.name,
-      loginname: '',
-      password: this.data.register.password,
-      img: '',
-      phone: this.data.register.phone,
-      sex: this.data.register.sex,
-      address: this.data.register.address,
-      nianji: this.data.register.nianji,
-      yuanxi: this.data.register.yuanxi,
-      banji: this.data.register.banji,
-      zhuanye: this.data.register.zhuanye,
-      huizhang: '',
-      txhname: ''
-    }
+    let data = this.data.userData
     app.ajax.changeOneInfoFeach(data).then(res => {
       app.alert.error(res.msg)
+      this.setMyInfo()
     }).catch(err => {
       app.alert.error(err.msg)
+    })
+  },
+  setMyInfo() {
+    let userInfo = wx.getStorageSync('userInfo')
+    let data = {
+      id: userInfo.id
+    }
+    app.ajax.getMyInfoFeach(data).then(res => {
+      wx.setStorageSync('userInfo', res.data)
+    }).catch(err => {
     })
   },
   /**

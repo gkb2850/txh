@@ -7,6 +7,10 @@ Component({
     data: {
       type: Array,
       value: []
+    },
+    type: {
+      type: String,
+      value: '1'
     }
   },
 
@@ -21,9 +25,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    toActiveityDetail () {
+    toActiveityDetail (e) {
+      let  id = e.currentTarget.dataset.id
       wx.navigateTo({
-        url: '/pages/activeityDetail/activeityDetail',
+        url: '/pages/activeityDetail/activeityDetail?id=' + id + '&type=' + this.data.type,
       })
     }
   }

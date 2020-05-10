@@ -29,7 +29,13 @@
     </view>
   </view>
   <view class="item_box">
-    <view class="txt_title">家乡:</view>
+    <view class="txt_title">地址:</view>
+    <view class="right">
+      <input class="txt" value="{{register.address}}" placeholder="请输入你的地址" bindinput="inputAddress"></input>
+    </view>
+  </view>
+  <view class="item_box">
+    <view class="txt_title">工会:</view>
     <view class="right">
       <view class="txt">
         <picker bindchange="bindPickerChangeHometown" value="{{index}}" range="{{hometownList}}">

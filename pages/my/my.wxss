@@ -63,6 +63,7 @@ page {
   padding: 20rpx 0 40rpx 0;
   box-sizing: border-box;
   display: flex;
+  align-items: center;
 }
 
 .container .top .login_yes>image {
@@ -70,6 +71,7 @@ page {
   height: 112rpx;
   display: block;
   margin-right: 20rpx;
+  border-radius: 56rpx;
 }
 
 .container .top .login_yes .right_txt {
@@ -78,6 +80,19 @@ page {
   flex-direction: column;
   height: 100%;
 }
+
+.container .top .login_yes .right {
+  width: 160rpx;
+  text-align: center;
+  height: 160rpx;
+}
+
+.container .top .login_yes .right>view {
+  height: 100%;
+  line-height: 160rpx;
+  color: #FA5051;
+}
+
 
 .container .top .login_yes .right_txt .lgoin_txt {
   height: 48rpx;

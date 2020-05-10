@@ -7,43 +7,8 @@ Page({
    */
   data: {
     search: '',
-    activeityList: [
-      {
-        title: '揭阳同乡会篮球队招募新生',
-        src:'../../assets/images/timg.jpg',
-        infoTxt: '这次招募的主要是大一新生，让新生快速融入新的集体,营造良好的校园环境',
-        people: '李哒哒',
-        time: '2020-4-24'
-      },
-      {
-        title: '揭阳同乡会羽毛球队',
-        src: '../../assets/images/yumaoqiu.jpg',
-        infoTxt: '这次招募招募活动是梅州同乡组织的一次大型的校园活动比赛招募',
-        people: '古哒哒',
-        time: '2020-6-18'
-      },
-      {
-        title: '揭阳同乡会捐书活动',
-        src: '../../assets/images/juanshu.jpg',
-        infoTxt: '这次招募的活动是一项很有意义的活动，为了让本校学生多余的课本不浪费，举办捐书活动',
-        people: '陈哒哒',
-        time: '2020-4-28'
-      },
-      {
-        title: '揭阳同乡会植树节春游活动',
-        src: '../../assets/images/zhishu.jpg',
-        infoTxt: '春天是一年中最美的季节,是学生踏青春游的好季节。通过踏青春游活动,让学生亲密接触大自然',
-        people: '刘哒哒',
-        time: '2020-5-20'
-      },
-      {
-        title: '揭阳同乡会举办书法大赛',
-        src: '../../assets/images/shufa.jpg',
-        infoTxt: '为继承和发扬我国书法艺术传统，弘扬爱国主义精神，我们将承办的现场书法大赛',
-        people: '廖哒哒',
-        time: '2020-5-10'
-      }
-    ]
+    activeityList: [],
+    userData:{}
   },
 
   /**
@@ -63,16 +28,30 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    app.tologin()
+    let userInfo = wx.getStorageSync('userInfo')
+    if (userInfo) {
+      this.setData({
+        userData: userInfo
+      })
+    }
+    this.gettxhActive()
   },
   // 获取同乡会活动
   gettxhActive () {
     let data = {
-      name: ''
+      name: this.data.userData.txhname,
+      search: this.data.search
     }
+    app.alert.loading()
     app.ajax.huodongFeach(data).then(res => {
       console.log(res)
+      app.alert.hideloading()
+      this.setData({
+        activeityList: res.data
+      })
     }).catch(err => {
+      app.alert.hideloading()
       app.alert.error(err.msg)
     })
   },
@@ -81,6 +60,7 @@ Page({
     this.setData({
       search: value
     })
+    this.gettxhActive()
   },
   /**
    * 生命周期函数--监听页面隐藏

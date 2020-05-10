@@ -25,6 +25,13 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    goupiao (e) {
+      console.log(e)
+      let id = e.currentTarget.dataset.id
+      let obj = {
+        id: id
+      }
+      this.triggerEvent('setCarChange', obj)
+    },
   }
 })

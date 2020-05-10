@@ -1,4 +1,5 @@
 // pages/signupactiveity/signupactiveity.js
+const app = getApp()
 Page({
 
   /**
@@ -6,30 +7,9 @@ Page({
    */
   data: {
     navIndex: '0',
-    activeityList: [
-      {
-        title: '揭阳同乡会篮球队招募新生',
-        src: '../../assets/images/timg.jpg',
-        infoTxt: '这次招募的主要是大一新生，让新生快速融入新的集体,营造良好的校园环境',
-        people: '李哒哒',
-        time: '2020-4-24'
-      },
-      {
-        title: '揭阳同乡会植树节春游活动',
-        src: '../../assets/images/zhishu.jpg',
-        infoTxt: '春天是一年中最美的季节,是学生踏青春游的好季节。通过踏青春游活动,让学生亲密接触大自然',
-        people: '刘哒哒',
-        time: '2020-5-20'
-      },
-      {
-        title: '揭阳同乡会举办书法大赛',
-        src: '../../assets/images/shufa.jpg',
-        infoTxt: '为继承和发扬我国书法艺术传统，弘扬爱国主义精神，我们将承办的现场书法大赛',
-        people: '廖哒哒',
-        time: '2020-5-10'
-      }
-    ],
-    formats: {}
+    activeityList: [],
+    formats: {},
+    userData:{}
   },
 
   /**
@@ -50,7 +30,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let userInfo = wx.getStorageSync('userInfo')
+    if (userInfo) {
+      this.setData({
+        userData: userInfo
+      })
+    }
+    this.myActiveList()
   },
   navClick(e) {
     let index = e.currentTarget.dataset.index
@@ -60,13 +46,21 @@ Page({
   },
   myActiveList () {
     let data = {
-      memid: '',
+      memid: this.data.userData.id,
       type: this.data.navIndex === '0' ? 0 : 1
     }
+    app.alert.loading()
     app.ajax.activitylistFeach(data).then(res => {
       console.log(res)
+      let data = res.data
+      this.setData({
+        activeityList: data
+      })
+      app.alert.hideloading()
     }).catch(err => {
       console.log(err)
+      app.alert.error(err.msg)
+      app.alert.hideloading()
     })
   },
   /**

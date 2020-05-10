@@ -10,6 +10,7 @@
     </view>
   </view>
   <view class="cont">
-    <v-activeity data="{{activeityList}}"></v-activeity>
+    <v-activeity data="{{activeityList}}" type="3"></v-activeity>
   </view>
+  <view class="btn_messtxt" wx:if="{{activeityList.length === 0}}">暂无记录</view>
 </view>

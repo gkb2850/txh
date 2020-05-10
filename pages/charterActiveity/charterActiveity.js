@@ -1,33 +1,20 @@
 // pages/charterActiveity/charterActiveity.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    activeityList: [
-      {
-        title: '揭阳同乡会篮球队招募新生',
-        src: '../../assets/images/timg.jpg',
-        infoTxt: '这次招募的主要是大一新生，让新生快速融入新的集体,营造良好的校园环境',
-        people: '李哒哒',
-        time: '2020-4-24'
-      },
-      {
-        title: '揭阳同乡会植树节春游活动',
-        src: '../../assets/images/zhishu.jpg',
-        infoTxt: '春天是一年中最美的季节,是学生踏青春游的好季节。通过踏青春游活动,让学生亲密接触大自然',
-        people: '刘哒哒',
-        time: '2020-5-20'
-      }
-    ],
+    activeityList: [],
+    userData: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
 
   /**
@@ -41,7 +28,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let userInfo = wx.getStorageSync('userInfo')
+    if (userInfo) {
+      this.setData({
+        userData: userInfo
+      })
+    }
+    this.getActiveList()
   },
   toReleaseActiveity () {
     wx.navigateTo({
@@ -51,11 +44,16 @@ Page({
   // 活动列表
   getActiveList () {
     let data = {
-      name: ''
+      name: this.data.userData.txhname
     }
+    app.alert.loading()
     app.ajax.huodonglistFeach(data).then(res => {
-      app.alert.error(res.msg)
+      this.setData({
+        activeityList: res.data
+      })
+      app.alert.hideloading()
     }).catch(err => {
+      app.alert.hideloading()
       app.alert.error(err.msg)
     })
   },

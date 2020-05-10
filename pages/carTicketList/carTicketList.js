@@ -6,7 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    navIndex: '0'
+    navIndex: '0',
+    userData: {},
+    carTickData: []
   },
 
   /**
@@ -27,24 +29,45 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let userInfo = wx.getStorageSync('userInfo')
+    this.setData({
+      userData: userInfo
+    })
+    this.getMyCarList()
   },
   navClick (e) {
     let index = e.currentTarget.dataset.index
     this.setData({
       navIndex: index
     })
+    this.getMyCarList()
   },
   getMyCarList () {
     let data = {
-      memid: '',
+      memid: this.data.userData.id,
       type: this.data.navIndex === '0' ? 0 : 1
     }
+    app.alert.loading()
     app.ajax.myticketlistFeach(data).then(res => {
       console.log(res)
+      let data = res.data
+      data.forEach(i => {
+        let date = new Date(i.starttime)
+        i.starttime = date.getFullYear() + '-' + ((date.getMonth() + 1) < 10 ? ('0' + (date.getMonth() + 1)) : (date.getMonth() + 1)) + '-' + (date.getDate() < 10 ? ('0' + date.getDate()) : date.getDate())
+      })
+      this.setData({
+        carTickData: data
+      })
+      app.alert.hideloading()
     }).catch(err => {
-      app.alert.error(msg)
+      app.alert.error(err.msg)
+      app.alert.hideloading()
+
     })
+  },
+  tuipiaoles (e) {
+    console.log(888)
+    this.getMyCarList()
   },
   /**
    * 生命周期函数--监听页面隐藏

@@ -5,7 +5,7 @@
   </view>
   <view class="cont_box">
     <view class="cont_center">
-      <v-activeity data="{{activeityList}}"></v-activeity>
+      <v-activeity data="{{activeityList}}" type="1"></v-activeity>
     </view>
   </view>
 </view>

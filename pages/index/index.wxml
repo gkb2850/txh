@@ -20,20 +20,20 @@
     <view class="new_box">
       <view class="item_box" wx:for="{{newsList}}" wx:key="index">
         <view class="left">
-          <image src="{{item.src}}"></image>
+          <image src="{{item.img}}"></image>
         </view>
         <view class="right">
           <view class="ac_title">
             <view>活动主题</view>
-            <view>{{item.titletxt}}</view>
+            <view>{{item.title}}</view>
           </view>
           <view class="author">
             <view>作者</view>
-            <view>{{item.nametxt}}</view>
+            <view>{{item.author}}</view>
           </view>
           <view class="time">
             <view>时间</view>
-            <view>{{item.time}}</view>
+            <view>{{item.creattime}}</view>
           </view>
         </view>
       </view>

@@ -94,3 +94,7 @@ page {
 .container .item_box .right .txt {
   line-height: 130rpx;
 }
+
+.picker {
+  line-height: 100rpx;
+}

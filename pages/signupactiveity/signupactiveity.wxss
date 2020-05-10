@@ -49,3 +49,14 @@
   padding-top: 88rpx;
   margin-top: 20rpx;
 }
+
+.container .btn_messtxt {
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(50,57,67,1);
+  text-align: center;
+  margin-top: 60rpx;
+}

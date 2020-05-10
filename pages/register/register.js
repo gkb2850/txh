@@ -1,4 +1,5 @@
 // pages/register/register.js
+const app = getApp()
 Page({
 
   /**
@@ -229,21 +230,7 @@ Page({
    */
   onLoad: function (options) {
     
-    let data = wx.getStorageSync('register')
-    if (!data) {
-      let register = {}
-      register.hometownListObj = this.data.hometownListObj
-      register.hometownList = this.data.hometownList
-      register.gradetxtListObj = this.data.gradetxtListObj
-      register.gradetxtList = this.data.gradetxtList
-      register.collegestxtListObj = this.data.collegestxtListObj
-      register.collegestxtList = this.data.collegestxtList
-      register.classtxtListObj = this.data.classtxtListObj
-      register.classtxtList = this.data.classtxtList
-      register.majortxtListObj = this.data.majortxtListObj
-      register.majortxtList = this.data.majortxtList
-      wx.setStorageSync('register', register)
-    } 
+     
   },
 
   /**
@@ -257,7 +244,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.gettxhList()
   },
   //性别改变
   radioChange (e) {
@@ -290,6 +277,12 @@ Page({
     let value = e.detail.value
     this.setData({
       'register.phone': value
+    })
+  },
+  inputAddress (e) {
+    let value = e.detail.value
+    this.setData({
+      'register.address': value
     })
   },
   inputAccNum(e) {
@@ -374,7 +367,55 @@ Page({
       })
       return
     }
-    console.log(this.data.register)
+
+    let data = {
+      id:'',
+      name: this.data.register.name,
+      loginname: this.data.register.accNum,
+      password: this.data.register.password,
+      img: this.data.register.userImg,
+      phone: this.data.register.phone,
+      sex:this.data.register.sex === '0' ? '男' : '女',
+      address: this.data.register.address,
+      nianji: this.data.register.gradetxt,
+      yuanxi: this.data.register.collegestxt,
+      banji: this.data.register.classtxt,
+      zhuanye: this.data.register.majortxt,
+      txhname: this.data.register.hometown
+
+    }
+    app.ajax.reqFeach(data).then(res => {
+      if (res.code === 200) {
+        app.alert.error('注册成功')
+        setTimeout(() => {
+          wx.navigateTo({
+            url: '/pages/login/login',
+          })
+        }, 1000)
+      } else {
+        app.alert.error('网络问题，请重试')
+      }
+    }).catch(err => {
+      app.alert.error('注册失败，请重试！')
+    })
+  },
+  //获取同乡会
+  gettxhList() {
+    let data = {}
+    app.ajax.gettxhListFeach(data).then(res => {
+      console.log(res)
+      let data = res.data
+      let arr = []
+      data.forEach(i => {
+        arr.push(i.name)
+      })
+      this.setData({
+        hometownList: arr
+      })
+      wx.setStorageSync('txhList', res.data)
+    }).catch(err => {
+      console.log(err)
+    })
   },
   /**
    * 生命周期函数--监听页面隐藏

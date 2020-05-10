@@ -47,7 +47,7 @@
   font-family:PingFangSC-Regular,PingFang SC;
   font-weight:400;
   color:rgba(152,158,167,1);
-  width: 60rpx;
+  width: 140rpx;
   text-align: right;
 }
 

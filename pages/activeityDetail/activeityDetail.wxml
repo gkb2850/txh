@@ -1,30 +1,34 @@
 <view class="container">
   <view class="title_box">
-    <view class="txtbt">嘟嘟嘟嘟嘟嘟</view>
+    <view class="txtbt">{{activeInfo.title}}</view>
     <view class="txt">
       <view>简介</view>
-      <view>简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介</view>
+      <view>{{activeInfo.intro}}</view>
     </view>
     <view class="people">
       <view>负责人</view>
-      <view>哒哒哒</view>
+      <view>{{activeInfo.createby}}</view>
     </view>
   </view>
   <view class="cont">
-    <rich-text></rich-text>
+    <rich-text nodes="{{activeInfo.content}}"></rich-text>
   </view>
   <view class="time_box">
     <view class="time">
       <view>开始时间</view>
-      <view>2020-4-29</view>
+      <view>{{activeInfo.starttime}}</view>
     </view>
     <view class="time">
       <view>结束时间</view>
-      <view>2020-4-29</view>
+      <view>{{activeInfo.endtime}}</view>
     </view>
   </view>
   <view class="signupa_box">
-    <view class="sign_up" wx:if="{{true}}">报名</view>
-    <view class="sign_in" wx:else>已报名</view>
+    <view class="sign_up" wx:if="{{type === '1'}}" bindtap="toBaoming" data-type="f">报名</view>
+    <view class="sign_in" wx:if="{{type === '3' }}" bindtap="toBaoming" data-type="ff">已报名</view>
+  </view>
+
+  <view class="signupa_box" wx:if="{{type === '2'}}">
+    <view class="del_act" bindtap="delAcitve">删除</view>
   </view>
 </view>

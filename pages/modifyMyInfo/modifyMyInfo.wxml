@@ -1,17 +1,17 @@
 <view class="container" wx:if="{{type === 'name'}}">
   <view class="input_box">
     <view>姓名</view>
-    <input type="text" value="{{name}}" placeholder="输入你的名字" focus></input>
+    <input type="text" value="{{userData.name}}" placeholder="输入你的名字" focus bindinput="inputname"></input>
   </view>
-  <view class="sure">确定</view>
+  <view class="sure" bindtap="clickSure" data-type="ff">确定</view>
 </view>
 
 <view class="container" wx:if="{{type === 'phone'}}">
   <view class="input_box">
     <view>手机号</view>
-    <input type="number" value="{{phone}}" placeholder="输入你的电话" focus></input>
+    <input type="number" value="{{userData.phone}}" placeholder="输入你的电话" focus bindinput="inputphone"></input>
   </view>
-  <view class="sure">确定</view>
+  <view class="sure" bindtap="clickSure" data-type="ff">确定</view>
 </view>
 
 <view class="container" wx:if="{{type === 'password'}}">
@@ -27,5 +27,5 @@
     <view>确认密码</view>
     <input type="text" value="{{passwordNews}}" placeholder="确认你的新密码"  password></input>
   </view>
-  <view class="sure">确定</view>
+  <view class="sure" bindtap="clickSure" data-type="fff">确定</view>
 </view>

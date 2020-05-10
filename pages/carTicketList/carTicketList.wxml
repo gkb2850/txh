@@ -10,6 +10,9 @@
     </view>
   </view>
   <view class="cont">
-    <v-carticket status="{{navIndex}}"></v-carticket>
+    <block wx:for="{{carTickData}}" wx:key="index">
+        <v-carticket status="{{navIndex}}" cardata="{{item}}" bind:tuipiaole="tuipiaoles"></v-carticket>
+    </block>
   </view>
+  <view class="btn_messtxt" wx:if="{{carTickData.length === 0}}">暂无记录</view>
 </view>

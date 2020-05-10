@@ -116,3 +116,7 @@
   color: #fff;
   background: #2D82FF;
 }
+
+.container .signupa_box .del_act {
+  background: #FA5051;
+}

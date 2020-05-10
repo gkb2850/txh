@@ -13,3 +13,13 @@ export const error = (msg) => {
     duration: 1000
   })
 }
+
+export const loading = (msg) => {
+  wx.showLoading({
+    title: msg || '加载中',
+  })
+}
+
+export const hideloading = () => {
+  wx.hideLoading()
+}

@@ -1,6 +1,6 @@
 <view class="container">
   <view class="top">
-    <view class="login_no" wx:if="{{true}}">
+    <view class="login_no" wx:if="{{!userInfo}}">
       <image src="../../assets/images/userPeople_icon.png"></image>
       <view class="right_txt">
         <view class="lgoin_txt" bindtap="toLogin">登录</view>
@@ -8,10 +8,13 @@
       </view>
     </view>
     <view class="login_yes" wx:else>
-      <image src="../../assets/images/userPeople_icon.png"></image>
+      <image src="{{userInfo.img}}"></image>
       <view class="right_txt">
-        <view class="lgoin_txt">账号</view>
-        <view class="register_txt">手机号</view>
+        <view class="lgoin_txt">{{userInfo.loginname}}</view>
+        <view class="register_txt">{{userInfo.phone}}</view>
+      </view>
+      <view class="right">
+        <view bindtap="totuichu">退出</view>
       </view>
     </view>
   </view>
@@ -52,7 +55,7 @@
         </view>
       </navigator>
     </view>
-    <view class="item_box">
+    <view class="item_box" wx:if="{{userInfo.huizhang === '会长'}}">
       <navigator url="/pages/charterCar/charterCar" hover-class="none">
         <image src="../../assets/images/carmanage_icon.png"></image>
         <view class="right_box">
@@ -61,7 +64,7 @@
         </view>
       </navigator>
     </view>
-    <view class="item_box">
+    <view class="item_box" wx:if="{{userInfo.huizhang === '会长'}}">
       <navigator url="/pages/charterActiveity/charterActiveity" hover-class="none">
         <image src="../../assets/images/activitymanage_iocn.png"></image>
         <view class="right_box">

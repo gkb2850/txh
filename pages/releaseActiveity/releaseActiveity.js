@@ -1,4 +1,5 @@
 // pages/releaseActiveity/releaseActiveity.js
+const app = getApp()
 Page({
 
   /**
@@ -8,9 +9,17 @@ Page({
     acitveData: {
       firstDay: '填写开始时间',
       lastDay: '填写结束时间',
+      fmImg: '../../assets/images/morenfengmiantu.png',
+      fmImgs: '',
+      title: '',
+      jianjietxt: '',
+      people: '',
+      phone: '',
+      address: ''
     },
     formats: {},
-    nodes: []
+    nodes: [],
+    userData: {}
   },
 
   /**
@@ -31,7 +40,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let userInfo = wx.getStorageSync('userInfo')
+    if (userInfo) {
+      this.setData({
+        userData: userInfo
+      })
+    }
   },
   format(e) {
     let { name, value } = e.target.dataset
@@ -75,11 +89,11 @@ Page({
     console.log(e)
     if (type === 'firstDay') {
       this.setData({
-        'ticketData.firstDay': value
+        'acitveData.firstDay': value
       })
     } else if (type === 'lastDay') {
       this.setData({
-        'ticketData.lastDay': value
+        'acitveData.lastDay': value
       })
     }
   },
@@ -90,31 +104,95 @@ Page({
         that.setData({
           nodes: res.html
         })
+        that.setActiveInfo()
       }
-    })
-    let data = {
-      id: '',
-      title: this.data.acitveData.title,
-      intro: this.data.acitveData.intro,
-      menid: '',
-      memname: '',
-      starttime: this.data.acitveData.starttime,
-      endtime: this.data.acitveData.endtime,
-      phone: this.data.acitveData.phone,
-      name: '',
-      address: '',
-      createby: ''
-    }
-    app.alert.fatxhFeach(data).then(res => {
-      app.alert.error(res.msg)
-    }).catch(err => {
-      app.alert.error(err.msg)
     })
 
   },
   // 发布活动
   setActiveInfo () {
-    
+    console.log(this.data.acitveData)
+    if (this.data.acitveData.title === '' || this.data.acitveData.jianjietxt === '' || this.data.acitveData.phone === '' || this.data.acitveData.people === '' || this.data.acitveData.fmImgs === '' || this.data.acitveData.firstDay === '填写开始时间' || this.data.acitveData.lastDay === '填写结束时间' || this.data.acitveData.address === '') {
+      app.alert.error('请填写完整')
+      return
+    }
+    let date = new Date
+    let data = {
+      id: '',
+      title: this.data.acitveData.title,
+      intro: this.data.acitveData.jianjietxt,
+      memid: this.data.userData.id,
+      memname: this.data.userData.name,
+      img: this.data.acitveData.fmImgs,
+      content: this.data.nodes,
+      creattime: date.getFullYear() + '-'+ (date.getMonth() + 1) + '-' + date.getDate(),
+      phone: this.data.acitveData.phone,
+      name: this.data.userData.txhname,
+      address: this.data.acitveData.address,
+      createby:this.data.acitveData.people,
+      endtime: this.data.acitveData.lastDay,
+      starttime: this.data.acitveData.firstDay
+    }
+    app.ajax.fatxhFeach(data).then(res => {
+      console.log(res)
+      if (res.code === 200) {
+        app.alert.error('发布成功')
+        setTimeout(() => {
+          wx.navigateBack({
+            delta: 1
+          })
+        }, 1000)
+      } else {
+        app.alert.error('发布失败，请重试！')
+      }
+    }).catch(err => {
+      console.log(err)
+      app.alert.error('发布失败，请重试！')
+    })
+  },
+  inputphone (e) {
+    let value = e.detail.value
+    this.setData({
+      'acitveData.phone':value
+    })
+  },
+  inputpeople(e) {
+    let value = e.detail.value
+    this.setData({
+      'acitveData.people': value
+    })
+  },
+  inputjianjie(e) {
+    let value = e.detail.value
+    this.setData({
+      'acitveData.jianjietxt': value
+    })
+  },
+  inputtitle(e) {
+    let value = e.detail.value
+    this.setData({
+      'acitveData.title': value
+    })
+  },
+  inputaddress(e) {
+    let value = e.detail.value
+    this.setData({
+      'acitveData.address': value
+    })
+  },
+  toSelectImg () {
+    let that = this
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album'],
+      success(res) {
+        that.setData({
+          'acitveData.fmImgs': 'data:image/png;base64,' + wx.getFileSystemManager().readFileSync(res.tempFilePaths[0], 'base64'),
+          'acitveData.fmImg': 'data:image/png;base64,' + wx.getFileSystemManager().readFileSync(res.tempFilePaths[0], 'base64')
+        })
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面隐藏

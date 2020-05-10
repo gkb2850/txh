@@ -30,7 +30,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.gettxhList()
   },
   // 去注册
   toRegister () {
@@ -62,7 +62,25 @@ Page({
       password: this.data.loginData.passWord
     }
     app.ajax.loginFeach(data).then(res => {
+      app.alert.error('登录成功')
+      let data = res.data
+      wx.setStorageSync('userInfo', data)
+      wx.switchTab({
+        url: '/pages/my/my',
+      })
+
+    }).catch(err => {
+      app.alert.error('请重试')
+    })
+  },
+  //获取同乡会
+  gettxhList() {
+    let data = {}
+    app.ajax.gettxhListFeach(data).then(res => {
       console.log(res)
+      if (!wx.getStorageSync('txhList')) {
+        wx.setStorageSync('txhList', res.data)
+      }
     }).catch(err => {
       console.log(err)
     })

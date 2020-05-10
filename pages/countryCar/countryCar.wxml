@@ -7,8 +7,8 @@
     <view class="left">
       <scroll-view style="height:100%;" scroll-y>
         <view class="left_box">
-          <view class="left_item" wx:for="{{addressList}}" wx:key="index" data-index="{{index}}" bindtap="clickAddressLeft">
-            <view class="txt">{{item}}</view>
+          <view class="left_item" wx:for="{{addressList}}" wx:key="index" data-index="{{index}}"  data-id="{{item.id}}" bindtap="clickAddressLeft">
+            <view class="txt">{{item.name}}</view>
             <view class="line" wx:if="{{index === addressIndex}}"></view>
           </view>
         </view>
@@ -17,7 +17,7 @@
     <view class="right">
       <scroll-view style="height: 100%;" scroll-y>
         <view class="right_box">
-          <v-caritem data="{{carticketList}}"></v-caritem>
+          <v-caritem data="{{carticketList}}" bind:setCarChange="goupiao"></v-caritem>
         </view>
       </scroll-view>
     </view>

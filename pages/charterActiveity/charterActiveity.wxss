@@ -59,3 +59,14 @@ page {
 .container .cont {
   padding: 20rpx 24rpx;
 }
+
+.container .bot>view {
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top: 60rpx;
+  font-size:28rpx;
+  text-align: center;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(50,57,67,1);
+}

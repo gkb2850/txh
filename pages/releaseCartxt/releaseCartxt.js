@@ -17,7 +17,9 @@ Page({
       num: '',
       price: ''
     },
-    timeDataArray: [[],[]]
+    userData: {},
+    timeDataArray: [[],[]],
+    txhid: ''
   },
 
   /**
@@ -38,7 +40,20 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let userInfo = wx.getStorageSync('userInfo')
+    let txhList = wx.getStorageSync('txhList')
+    if (userInfo) {
+      this.setData({
+        userData: userInfo
+      })
+    }
+    txhList.forEach(i => {
+      if (i.name === userInfo.txhname) {
+        this.setData({
+          txhid: i.id
+        })
+      }
+    })
   },
   bindDateChange (e) {
     let type = e.currentTarget.dataset.type
@@ -71,15 +86,15 @@ Page({
     console.log(this.data.ticketData)
     let data = {
       id: '',
-      menid: '',
-      memname: '',
-      txhid: '',
-      txhname: '',
+      memid: this.data.userData.id,
+      memname: this.data.userData.name,
+      txhid: this.data.txhid,
+      txhname: this.data.userData.txhname,
       onbus: this.data.ticketData.geton,
       offbus: this.data.ticketData.getoff,
       maketime: this.data.ticketData.firstDay,
       endtime: this.data.ticketData.lastDay,
-      starttime: this.data.ticketData.startDay + this.data.ticketData.startTime,
+      starttime: this.data.ticketData.startDay + ' '+ this.data.ticketData.startTime,
       banci: this.data.ticketData.banci,
       num: this.data.ticketData.num,
       price: this.data.ticketData.price,
@@ -87,9 +102,18 @@ Page({
     }
     app.ajax.fachepiaoFeach(data).then(res => {
       console.log(res)
-      app.alert.error(res.msg)
+      if (res.code === 200) {
+        app.alert.error('发布成功')
+        setTimeout(() => {
+          wx.navigateBack({
+            delta: 1
+          })
+        }, 1000)
+      } else {
+        app.alert.error('发布失败，请重试！')
+      }
     }).catch(err => {
-      app.alert.error(err.msg)
+      app.alert.error('发布失败，请重试！')
     })
   },
   inputprice (e) {

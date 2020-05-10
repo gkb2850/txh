@@ -61,7 +61,7 @@
       <view class="right">
         <view class="origin">
           <view class="top_txt">班次详情</view>
-          <input type="text" placeholder="填写班次详情" value="{{ticketData.banci}}" bindinput="inputbanci"></input>
+          <textarea placeholder="填写班次详情" value="{{ticketData.banci}}" bindinput="inputbanci"></textarea>
         </view>
       </view>
     </view>

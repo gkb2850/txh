@@ -1,25 +1,22 @@
 <view class="container" wx:for="{{data}}" wx:key="index">
   <view class="title">
-    <view class="left">{{item.time}}</view>
+    <view class="left">{{item.times}}</view>
     <view class="right">
-      <view>{{item.titletxt}}</view>
-      <view>{{item.dayTime}}</view>
+      <view>{{item.onbus}} - {{item.offbus}}</view>
+      <view>{{item.startDay}}</view>
     </view>
   </view>
   <view class="cont">
-    <view class="txtcar">班次：{{item.cartxt}}</view>
-    <view class="price">票价：全票 ￥{{item.money}}</view>
+    <view class="txtcar">班次：{{item.banci}}</view>
+    <view class="price">票价：全票 ￥{{item.price}}</view>
   </view>
   <view class="bot">
     <view class="left">
-      <view class="num">剩{{item.num}}张</view>
-      <view class="money">￥{{item.money}}</view>
+      <view class="num">剩{{item.num - item.endnum}}张</view>
+      <view class="money">￥{{item.price}}</view>
     </view>
-    <view class="right" wx:if="{{!typeticket && item.num > 0}}">
-      <view>购票</view>
-    </view>
-    <view class="right" wx:if="{{typeticket}}">
-      <view>退票</view>
+    <view class="right" wx:if="{{!typeticket && (item.num - item.endnum) > 0}}">
+      <view bindtap="goupiao" data-id="{{item.id}}">购票</view>
     </view>
   </view>
 </view>

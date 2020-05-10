@@ -81,6 +81,14 @@
   flex: 1;
 }
 
+.container .cont .item_box .right .origin .fmImg {
+  height: 200rpx;
+  width: 200rpx;
+  display: block;
+  border: 2rpx solid #D1D1D1;
+  margin-top: 20rpx;
+}
+
 .container .cont .item_box .right .origin:nth-child(2n + 2) {
   padding-left: 40rpx;
   box-sizing: border-box;
@@ -103,6 +111,19 @@
   font-family:PingFangSC-Regular,PingFang SC;
   font-weight:400;
   color:rgba(152,158,167,1);
+}
+
+.container .cont .item_box .right .origin textarea {
+  height: 240rpx;
+  line-height: 50rpx;
+  border-bottom: 2rpx solid #D1D1D1;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(152,158,167,1);
+  border: 2rpx solid #D1D1D1;
+  padding: 20rpx;
+  box-sizing: border-box;
 }
 
 .container .cont .item_box .right .origin .picker_box {

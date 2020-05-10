@@ -6,81 +6,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    addressList:[
-      '广州市',
-      '深圳市',
-      '韶关市',
-      '珠海市',
-      '汕头市',
-      '佛山市',
-      '江门市',
-      '湛江市',
-      '茂名市',
-      '肇庆市',
-      '惠州市',
-      '梅州市',
-      '汕尾市',
-      '河源市',
-      '阳江市',
-      '清远市',
-      '潮州市',
-      '揭阳市',
-      '云浮市',
-      '东莞市',
-      '中山市',
-    ],
+    addressList:[],
     addressIndex: 0,
-    carticketList: [
-      {
-        time: '08:50',
-        titletxt: '天河客运站-本校',
-        dayTime: '4-28',
-        cartxt:'天河客运站上车直到本校门口，途径白云，东圃，清远约1个小时 清远(本校区)',
-        money:'60',
-        num:45
-      },
-      {
-        time: '09:50',
-        titletxt: '天河客运站-本校',
-        dayTime: '4-28',
-        cartxt: '天河客运站上车直到本校门口，途径白云，东圃，清远约1个小时 清远(本校区)',
-        money: '60',
-        num: 35
-      },
-      {
-        time: '10:50',
-        titletxt: '天河客运站-本校',
-        dayTime: '4-28',
-        cartxt: '天河客运站上车直到本校门口，途径白云，东圃，清远约1个小时 清远(本校区)',
-        money: '60',
-        num: 20
-      },
-      {
-        time: '02:50',
-        titletxt: '天河客运站-本校',
-        dayTime: '4-28',
-        cartxt: '天河客运站上车直到本校门口，途径白云，东圃，清远约1个小时 清远(本校区)',
-        money: '60',
-        num: 30
-      },
-      {
-        time: '03:50',
-        titletxt: '天河客运站-本校',
-        dayTime: '4-28',
-        cartxt: '天河客运站上车直到本校门口，途径白云，东圃，清远约1个小时 清远(本校区)',
-        money: '60',
-        num: 10
-      },
-      {
-        time: '04:50',
-        titletxt: '天河客运站-本校',
-        dayTime: '4-28',
-        cartxt: '天河客运站上车直到本校门口，途径白云，东圃，清远约1个小时 清远(本校区)',
-        money: '60',
-        num: 45
-      }
-    ],
-    search: ''
+    carticketList: [],
+    search: '',
+    userData: {},
+    txhid:''
   },
 
   /**
@@ -101,13 +32,31 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    app.tologin()
+    let userInfo = wx.getStorageSync('userInfo')
+    let txhList = wx.getStorageSync('txhList')
+    this.setData({
+      userData: userInfo
+    })
+    txhList.forEach((i, oi) => {
+      if (i.name === userInfo.txhname) {
+        this.setData({
+          txhid: i.id,
+          addressIndex: oi
+        })
+      }
+    })
+    this.gettxhList()
+    this.getTxhCarList()
   },
   clickAddressLeft (e) {
     let index = e.currentTarget.dataset.index
+    let id = e.currentTarget.dataset.id
     this.setData({
-      addressIndex: index
+      addressIndex: index,
+      txhid: id
     })
+    this.getTxhCarList()
   },
   toReleaseCar () {
     wx.navigateTo({
@@ -118,11 +67,23 @@ Page({
   getTxhCarList () {
     let data = {
       search: this.data.search,
-      txhid: ''
+      txhid: this.data.txhid
     }
+    app.alert.loading()
     app.ajax.bugtilistFeach(data).then(res => {
       console.log(res)
+      let data = res.data.tickets
+      data.forEach(i => {
+        let num = i.starttime.indexOf(' ')
+        i.times = i.starttime.slice(num)
+        i.startDay = i.starttime.slice(0, num)
+      })
+      this.setData({
+        carticketList: data
+      })
+      app.alert.hideloading()
     }).catch(err => {
+      app.alert.hideloading()
       app.alert.error(err.msg)
     })
   },
@@ -130,6 +91,38 @@ Page({
     let value = e.detail.value
     this.setData({
       search: value
+    })
+    this.getTxhCarList()
+  },
+  //获取同乡会
+  gettxhList () {
+    let data = {
+      name: this.data.userData.name
+    }
+    app.ajax.gettxhListFeach(data).then(res => {
+      console.log(res)
+      this.setData({
+        addressList: res.data
+      })
+    }).catch(err => {
+      console.log(err)
+    })
+  },
+  goupiao(e) {
+    console.log(e)
+    let data = {
+      memid: this.data.userData.id,
+      memname: this.data.userData.name,
+      ticktid: e.detail.id,
+      phone: this.data.userData.phone
+    }
+    app.ajax.goupiaoFeach(data).then(res => {
+      console.log(res)
+      app.alert.error(res.msg)
+      this.getTxhCarList()
+    }).catch(err => {
+      console.log(err)
+      app.alert.error(err.msg)
     })
   },
   /**

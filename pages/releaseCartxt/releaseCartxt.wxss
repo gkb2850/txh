@@ -71,6 +71,19 @@
   color:rgba(152,158,167,1);
 }
 
+.container .cont .item_box .right .origin textarea {
+  height: 240rpx;
+  line-height: 50rpx;
+  border-bottom: 2rpx solid #D1D1D1;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(152,158,167,1);
+  border: 2rpx solid #D1D1D1;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
 .container .cont .item_box .right .origin .picker_box {
   height: 100%;
   width: 100%;
@@ -87,7 +100,7 @@
 }
 
 .container .bot {
-  margin:  100rpx 0 0 0;
+  margin:  100rpx 0;
   background: #2D82FF;
   color: #fff;
   font-size:28rpx;
