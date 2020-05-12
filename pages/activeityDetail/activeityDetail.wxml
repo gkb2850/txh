@@ -25,10 +25,34 @@
   </view>
   <view class="signupa_box">
     <view class="sign_up" wx:if="{{type === '1'}}" bindtap="toBaoming" data-type="f">报名</view>
-    <view class="sign_in" wx:if="{{type === '3' }}" bindtap="toBaoming" data-type="ff">已报名</view>
+    <view class="sign_in" wx:if="{{type === '3' }}" bindtap="toBaoming" data-type="ff">退出参加</view>
   </view>
 
-  <view class="signupa_box" wx:if="{{type === '2'}}">
+  <view class="signupa_box" wx:if="{{type === '6'}}">
     <view class="del_act" bindtap="delAcitve">删除</view>
+  </view>
+  <view class="qiandao" wx:if="{{type === '2'}}">
+    <view class="conts">
+    <view class="cont_title">
+      <view class="txt">签到出发人数</view>
+      <view class="btn" bindtap="signInPeopleAll">签到全部</view>
+    </view>
+    <view class="people_box">
+      <view class="name_box" wx:for="{{activitylinkList}}" wx:key="index" bindtap="signInPeople" data-index="{{index}}">
+        <view class="name {{item.qiandao === '已签到'? 'nameactive':''}}">{{item.memname}}</view>
+        <image src="{{item.qiandao === '已签到'?selectImging:selectImg}}"></image>
+      </view>
+    </view>
+    <view class="num_box">
+      <view class="num_txt">
+        <view>总报名人数:</view>
+        <view>{{allPeopleNum}}</view>
+      </view>
+      <view class="num_txt">
+        <view>已签到人数:</view>
+        <view>{{signInNum}}</view>
+      </view>
+    </view>
+  </view>
   </view>
 </view>

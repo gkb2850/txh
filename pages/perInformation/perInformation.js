@@ -45,7 +45,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getMyInfo()
+    
   },
 
   /**
@@ -62,13 +62,11 @@ Page({
     let register = wx.getStorageSync('register')
     if (register) {
       this.setData({
-        hometownList: register.hometownList,
-        gradetxtList: register.gradetxtList,
-        collegestxtList: register.collegestxtList,
-        classtxtList: register.classtxtList,
-        majortxtList: register.majortxtList,
+        gradetxtList: register.gradetxtList
       })
     }
+    this.gettxhList()
+    this.getMyInfo()
   },
   // 获取个人信息
   getMyInfo() {
@@ -116,6 +114,18 @@ Page({
       wx.navigateTo({
         url: '/pages/modifyMyInfo/modifyMyInfo?type=password',
       })
+    } else if (type === 'yuanxi') {
+      wx.navigateTo({
+        url: '/pages/modifyMyInfo/modifyMyInfo?type=yuanxi',
+      })
+    } else if (type === 'banji') {
+      wx.navigateTo({
+        url: '/pages/modifyMyInfo/modifyMyInfo?type=banji',
+      })
+    } else if (type === 'zhuanye') {
+      wx.navigateTo({
+        url: '/pages/modifyMyInfo/modifyMyInfo?type=zhuanye',
+      })
     }
   },
   bindPickerChange (e) {
@@ -124,7 +134,8 @@ Page({
     let value = e.detail.value
     if (type === 'hometown') {
       this.setData({
-        'userData.address':this.data.hometownList[value]
+        'userData.address': this.data.hometownList[value],
+        'userData.txhname':this.data.hometownList[value]
       })
     } else if (type === 'gradetxt') {
       this.setData({
@@ -169,6 +180,24 @@ Page({
     app.ajax.getMyInfoFeach(data).then(res => {
       wx.setStorageSync('userInfo', res.data)
     }).catch(err => {
+    })
+  },
+  //获取同乡会
+  gettxhList() {
+    let data = {}
+    app.ajax.gettxhListFeach(data).then(res => {
+      console.log(res)
+      let data = res.data
+      let arr = []
+      data.forEach(i => {
+        arr.push(i.name)
+      })
+      this.setData({
+        hometownList: arr
+      })
+      wx.setStorageSync('txhList', res.data)
+    }).catch(err => {
+      console.log(err)
     })
   },
   /**

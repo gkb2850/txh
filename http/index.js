@@ -1,6 +1,6 @@
 import {requestUrl} from './request.js'
 
-const baseUrl = 'http://sun.buxiaosheng.com/wap'
+const baseUrl = 'http://192.168.31.97:8081/wap'
 
 export const loginFeach = (data) => requestUrl(baseUrl + '/login', data, 'POST');//登录接口
 export const indexFeach = (data) => requestUrl(baseUrl + '/index', data, 'POST');//首页接口
@@ -24,6 +24,9 @@ export const jiahuodongFeach = (data) => requestUrl(baseUrl + '/jiahuodong', dat
 export const reqFeach = (data) => requestUrl(baseUrl + '/req', data, 'POST');//注册
 export const gettxhListFeach = (data) => requestUrl(baseUrl + '/tongxianghuilist', data, 'POST');//同乡会列表goupiao
 export const goupiaoFeach = (data) => requestUrl(baseUrl + '/goupiao', data, 'POST');//购票huodonginfo
-export const huodonginfoFeach = (data) => requestUrl(baseUrl + '/huodonginfo', data, 'POST');//活动详情/chepiaoInfo
+export const huodonginfoFeach = (data) => requestUrl(baseUrl + '/huodonginfo', data, 'POST');//活动详情
 export const chepiaoInfofoFeach = (data) => requestUrl(baseUrl + '/chepiaoInfo', data, 'POST');//汽车票详情
 export const qiandaocarfoFeach = (data) => requestUrl(baseUrl + '/qiandao', data, 'POST');//汽车票人数签到
+export const zixunInfoFeach = (data) => requestUrl(baseUrl + '/zixunInfo', data, 'POST');//资讯详情
+export const huodongqiandaoFeach = (data) => requestUrl(baseUrl + '/huodongqiandao', data, 'POST');//活动签到/tuichuhuodong
+export const tuichuhuodongFeach = (data) => requestUrl(baseUrl + '/tuichuhuodong', data, 'POST');//退出活动

@@ -1,0 +1,44 @@
+.container {
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.container .titile_box {
+  line-height: 60rpx;
+  font-size:30rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(50,57,67,1);
+  padding: 0 100rpx;
+}
+
+.container .athour {
+  font-size:28rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(206,211,218,1);
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+}
+
+.container .cont_img {
+  width: 80%;
+  margin: 40rpx  auto;
+  display: block;
+}
+
+.container .cont_txt {
+  margin: 20rpx 0;
+}
+
+.container .time {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(50,57,67,1);
+}
+
+

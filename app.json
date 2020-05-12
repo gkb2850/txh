@@ -15,7 +15,8 @@
     "pages/signupactiveity/signupactiveity",
     "pages/releaseActiveity/releaseActiveity",
     "pages/charterActiveity/charterActiveity",
-    "pages/activeityDetail/activeityDetail"
+    "pages/activeityDetail/activeityDetail",
+    "pages/zixunDetail/zixunDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

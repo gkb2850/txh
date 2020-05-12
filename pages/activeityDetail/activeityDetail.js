@@ -9,7 +9,13 @@ Page({
     userInfo: {},
     id: '',
     activeInfo: {},
-    type: '1'
+    type: '1',
+    activitylinkList: [],
+    selectImging: '../../assets/images/dagouyouquana.png',
+    selectImg: '../../assets/images/dagouyouquanb.png',
+    allPeopleNum: 0,
+    signInNum: 0,
+    activityid: ''
   },
 
   /**
@@ -19,6 +25,11 @@ Page({
     if (options.id) {
       this.setData({
         id: options.id
+      })
+    }
+    if (options.activityid) {
+      this.setData({
+        activityid: options.activityid
       })
     }
     console.log(options.type)
@@ -70,35 +81,107 @@ Page({
   toBaoming (e) {
     let type = e.currentTarget.dataset.type
     if (type === 'ff') {
-      app.alert.error('已经报名过了')
-      return
+      let data = {
+        id: this.data.id
+      }
+      app.ajax.tuichuhuodongFeach(data).then(res => {
+        app.alert.error(res.msg)
+        setTimeout(() => {
+          wx.navigateBack({
+            delta: 1
+          })
+        },1000)
+      }).catch(err => {
+        console.log(err.msg)
+        app.alert.error(err.msg)
+      })
+    } else {
+      let data = {
+        memid: this.data.userInfo.id,
+        memname: this.data.userInfo.name,
+        activityid: this.data.activeInfo.id
+      }
+      app.ajax.jiahuodongFeach(data).then(res => {
+        app.alert.error(res.msg)
+      }).catch(err => {
+        console.log(err.msg)
+        app.alert.error(err.msg)
+      })
     }
-    let data = {
-      memid: this.data.userInfo.id,
-      memname: this.data.userInfo.name,
-      activityid: this.data.activeInfo.id
-    }
-    app.ajax.jiahuodongFeach(data).then(res => {
-      app.alert.error(res.msg)
-    }).catch(err => {
-      console.log(err.msg)
-      app.alert.error(err.msg)
-    })
   },
   //活动详情
   getAcitveInfo () {
     let data = {
-      id: this.data.id
+      id: this.data.activityid
     }
     app.alert.loading()
     app.ajax.huodonginfoFeach(data).then(res => {
       app.alert.hideloading()
       this.setData({
-        activeInfo: res.data
+        activeInfo: res.data.ticket,
+        activitylinkList: res.data.activitylinks,
+        allPeopleNum: res.data.activitylinks.length ? res.data.activitylinks.length : 0
       })
     }).catch(err => {
       app.alert.hideloading()
       app.alert.error(err.msg)
+    })
+  },
+  signInPeople(e) {
+    let index = e.currentTarget.dataset.index
+    let data = this.data.activitylinkList[index]
+    data.qiandao = data.qiandao === '已签到' ? '未签到' : '已签到'
+    let dataStr = 'activitylinkList[' + index + ']'
+    this.setData({
+      [dataStr]: data
+    })
+    let num = 0
+    this.data.activitylinkList.forEach(i => {
+      if (i.qiandao === '已签到') {
+        num++
+      }
+    })
+    this.setData({
+      signInNum: num
+    })
+    this.qiandaoNum()
+  },
+  // 签到所有
+  signInPeopleAll() {
+    let data = this.data.activitylinkList
+    data.forEach(i => {
+      i.qiandao = '已签到'
+    })
+    this.setData({
+      activitylinkList: data,
+      signInNum: this.data.activitylinkList.length
+    })
+    this.qiandaoNum('all')
+  },
+  //签到
+  qiandaoNum(str) {
+    let data = {}
+    if (str === 'all') {
+      data.id = this.data.id
+    } else {
+      let arr = []
+      let arrs = []
+      this.data.activitylinkList.forEach(i => {
+        if (i.qiandao === '已签到') {
+          arr.push(i.id)
+        } else {
+          arrs.push(i.id)
+        }
+      })
+      data.id = this.data.id
+      data.userId = arr.join(',')
+      data.cancelId = arrs.join(',')
+    }
+    app.ajax.huodongqiandaoFeach(data).then(res => {
+      app.alert.error(res.msg)
+    }).catch(err => {
+      app.alert.error(err.msg)
+      this.getCarInfo()
     })
   },
   /**

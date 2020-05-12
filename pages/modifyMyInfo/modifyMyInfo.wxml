@@ -1,7 +1,7 @@
 <view class="container" wx:if="{{type === 'name'}}">
   <view class="input_box">
     <view>姓名</view>
-    <input type="text" value="{{userData.name}}" placeholder="输入你的名字" focus bindinput="inputname"></input>
+    <input type="text" value="{{userData.name}}" placeholder="输入你的名字" focus bindblur="inputname"></input>
   </view>
   <view class="sure" bindtap="clickSure" data-type="ff">确定</view>
 </view>
@@ -9,7 +9,7 @@
 <view class="container" wx:if="{{type === 'phone'}}">
   <view class="input_box">
     <view>手机号</view>
-    <input type="number" value="{{userData.phone}}" placeholder="输入你的电话" focus bindinput="inputphone"></input>
+    <input type="number" value="{{userData.phone}}" placeholder="输入你的电话" focus bindblur="inputphone"></input>
   </view>
   <view class="sure" bindtap="clickSure" data-type="ff">确定</view>
 </view>
@@ -28,4 +28,28 @@
     <input type="text" value="{{passwordNews}}" placeholder="确认你的新密码"  password></input>
   </view>
   <view class="sure" bindtap="clickSure" data-type="fff">确定</view>
+</view>
+
+<view class="container" wx:if="{{type === 'yuanxi'}}">
+  <view class="input_box">
+    <view>院系</view>
+    <input type="text" value="{{userData.yuanxi}}" placeholder="输入你的院系" focus bindblur="inputyuanxi"></input>
+  </view>
+  <view class="sure" bindtap="clickSure" data-type="ff">确定</view>
+</view>
+
+<view class="container" wx:if="{{type === 'banji'}}">
+  <view class="input_box">
+    <view>班级</view>
+    <input type="text" value="{{userData.banji}}" placeholder="输入你的班级" focus bindblur="inputbanji"></input>
+  </view>
+  <view class="sure" bindtap="clickSure" data-type="ff">确定</view>
+</view>
+
+<view class="container" wx:if="{{type === 'zhuanye'}}">
+  <view class="input_box">
+    <view>专业</view>
+    <input type="text" value="{{userData.zhuanye}}" placeholder="输入你的专业" focus bindblur="inputzhuanye"></input>
+  </view>
+  <view class="sure" bindtap="clickSure" data-type="ff">确定</view>
 </view>

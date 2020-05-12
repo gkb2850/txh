@@ -10,7 +10,7 @@
     <view class="login_yes" wx:else>
       <image src="{{userInfo.img}}"></image>
       <view class="right_txt">
-        <view class="lgoin_txt">{{userInfo.loginname}}</view>
+        <view class="lgoin_txt">{{userInfo.name}}</view>
         <view class="register_txt">{{userInfo.phone}}</view>
       </view>
       <view class="right">

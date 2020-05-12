@@ -120,3 +120,116 @@
 .container .signupa_box .del_act {
   background: #FA5051;
 }
+
+
+
+
+
+.container .conts {
+  padding: 20rpx 24rpx;
+  background: #fff;
+  border-radius: 24rpx;
+}
+
+.container .conts .cont_title {
+  height: 60rpx;
+  color: #2D82FF;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  position: relative;
+}
+
+.container .conts .cont_title .txt {
+  width: 100%;
+  height: 100%;
+  line-height: 60rpx;
+  text-align: center;
+}
+
+.container .conts .cont_title .btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  line-height: 60rpx;
+  width: 130rpx;
+  text-align: center;
+  color: #fff;
+  background: #2D82FF;
+  border-radius: 8rpx;
+  font-size:24rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+}
+
+.container .conts .people_box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container .conts .people_box .name_box {
+  width: 18%;
+  overflow: hidden;
+  padding:  20rpx 0;
+  margin-right: 2.2%;
+}
+
+.container .conts .people_box .name_box:nth-child(5n + 5) {
+  margin-right: 0;
+}
+
+.container .conts .people_box .name_box .name {
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-bottom: 10rpx;
+  text-align: center;
+  box-sizing: border-box;
+  font-size:26rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  background:rgba(248,249,250,1);
+  color: #636D7B;
+  border-radius: 8rpx;
+}
+
+.container .conts .people_box .name_box .name.nameactive {
+  background:rgba(45,130,255,0.1);
+  color:rgba(45,130,255,1);
+}
+
+.container .conts .people_box .name_box>image {
+  height: 40rpx;
+  width: 40rpx;
+  display: block;
+  margin: 0 auto;
+}
+
+.container .conts .num_box {
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size:28rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:rgba(45,130,255,1);
+}
+
+.container .conts .num_box .num_txt {
+  flex: 1;
+  display: flex;
+  height: 80rpx;
+}
+
+.container .conts .num_box .num_txt>view:nth-child(1) {
+  height: 100%;
+  line-height: 80rpx;
+  color: #636D7B;
+  margin-right: 20rpx;
+}
+
+.container .conts .num_box .num_txt>view:nth-child(2) {
+  height: 100%;
+  line-height: 80rpx;
+}

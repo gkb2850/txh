@@ -35,7 +35,7 @@
     </view>
   </view>
   <view class="item_box">
-    <view class="txt_title">工会:</view>
+    <view class="txt_title">家乡:</view>
     <view class="right">
       <view class="txt">
         <picker bindchange="bindPickerChangeHometown" value="{{index}}" range="{{hometownList}}">
@@ -59,34 +59,19 @@
   <view class="item_box">
     <view class="txt_title">院系:</view>
     <view class="right">
-      <view class="txt">
-        <picker bindchange="bindPickerChangeCollegestxt" value="{{index}}" range="{{collegestxtList}}">
-          <view class="picker">{{register.collegestxt}}</view>
-        </picker>
-      </view>
-      <image class="txtimg" src="../../assets/images/toright_icon.png"></image>
+      <input class="txt" value="{{register.collegestxt}}" placeholder="请输入你的院系" type="text" bindinput="inputCollegestxt"></input>
     </view>
   </view>
   <view class="item_box">
     <view class="txt_title">班级:</view>
     <view class="right">
-      <view class="txt">
-        <picker bindchange="bindPickerChangeClasstxt" value="{{index}}" range="{{classtxtList}}">
-          <view class="picker">{{register.classtxt}}</view>
-        </picker>
-      </view>
-      <image class="txtimg" src="../../assets/images/toright_icon.png"></image>
+      <input class="txt" value="{{register.classtxt}}" placeholder="请输入你的班级" type="text" bindinput="inputClasstxt"></input>
     </view>
   </view>
   <view class="item_box">
     <view class="txt_title">专业:</view>
     <view class="right">
-      <view class="txt">
-        <picker bindchange="bindPickerChangeMajortxt" value="{{index}}" range="{{majortxtList}}">
-          <view class="picker">{{register.majortxt}}</view>
-        </picker>
-      </view>
-      <image class="txtimg" src="../../assets/images/toright_icon.png"></image>
+      <input class="txt" value="{{register.majortxt}}" placeholder="请输入你的专业" type="text" bindinput="inputMajortxt"></input>
     </view>
   </view>
   <view class="item_box">

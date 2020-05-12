@@ -1,0 +1,9 @@
+<view class="container"> 
+  <view class="titile_box">{{zixunData.title}}</view>
+  <view class="athour">作者：{{zixunData.author}}</view>
+  <image class="cont_img" src="{{zixunData.img}}" mode="widthFix"></image>
+  <view class="cont_txt">
+    <rich-text nodes="{{zixunData.content}}"></rich-text>
+  </view>
+  <view class="time">活动时间:{{zixunData.creattime}}</view>
+</view>

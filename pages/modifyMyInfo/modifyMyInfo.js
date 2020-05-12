@@ -72,6 +72,24 @@ Page({
       'userData.phone': value
     })
   },
+  inputyuanxi(e) {
+    let value = e.detail.value
+    this.setData({
+      'userData.yuanxi': value
+    })
+  },
+  inputbanji(e) {
+    let value = e.detail.value
+    this.setData({
+      'userData.banji': value
+    })
+  },
+  inputzhuanye(e) {
+    let value = e.detail.value
+    this.setData({
+      'userData.zhuanye': value
+    })
+  },
   clickSure (e) {
     let type = e.currentTarget.dataset.type
     if (type === 'ff') {

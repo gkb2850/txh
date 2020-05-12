@@ -27,8 +27,9 @@ Component({
   methods: {
     toActiveityDetail (e) {
       let  id = e.currentTarget.dataset.id
+      let activityid = e.currentTarget.dataset.activityid
       wx.navigateTo({
-        url: '/pages/activeityDetail/activeityDetail?id=' + id + '&type=' + this.data.type,
+        url: '/pages/activeityDetail/activeityDetail?id=' + id + '&type=' + this.data.type + '&activityid=' + activityid,
       })
     }
   }

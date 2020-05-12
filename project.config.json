@@ -141,6 +141,13 @@
 					"id": -1,
 					"name": "pages/activeityDetail/activeityDetail",
 					"pathName": "pages/activeityDetail/activeityDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/zixunDetail/zixunDetail",
+					"pathName": "pages/zixunDetail/zixunDetail",
 					"scene": null
 				}
 			]

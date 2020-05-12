@@ -9,11 +9,12 @@ Page({
     newsList: []
   },
   onLoad: function () {
-    this.getIndexZixunList()
-    this.getIndexList()
+    
   },
   onShow: function () {
     app.tologin()
+    this.getIndexZixunList()
+    this.getIndexList()
   },
   //获取首页资讯
   getIndexZixunList () {
@@ -41,5 +42,11 @@ Page({
     }).catch(err => {
       console.log(err)
     })
-  }
+  },
+  tozixunInfo (e) {
+    let id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '/pages/zixunDetail/zixunDetail?id='+id,
+    })
+  },
 })

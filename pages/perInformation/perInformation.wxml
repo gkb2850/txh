@@ -30,7 +30,7 @@
     </view>
   </view>
   <view class="item_box">
-    <view class="txt">工会</view>
+    <view class="txt">家乡</view>
     <view class="right">
       <picker class="picker_box" bindchange="bindPickerChange" data-type="hometown" value="{{index}}" range="{{hometownList}}">
         <view class="picker">{{userData.address}}</view>
@@ -47,30 +47,24 @@
       <image class="arrow" src="../../assets/images/toright_icons.png"></image>
     </view>
   </view>
-  <view class="item_box">
+  <view class="item_box" bindtap="changeMyInfo" data-type="yuanxi">
     <view class="txt">院系</view>
     <view class="right">
-      <picker class="picker_box" bindchange="bindPickerChange" data-type="collegestxt" value="{{index}}" range="{{collegestxtList}}">
-        <view class="picker">{{userData.yuanxi}}</view>
-      </picker>
+      <view>{{userData.yuanxi}}</view>
       <image class="arrow" src="../../assets/images/toright_icons.png"></image>
     </view>
   </view>
-  <view class="item_box">
+  <view class="item_box" bindtap="changeMyInfo" data-type="banji">
     <view class="txt">班级</view>
     <view class="right">
-      <picker class="picker_box" bindchange="bindPickerChange" data-type="classtxt" value="{{index}}" range="{{classtxtList}}">
-        <view class="picker">{{userData.banji}}</view>
-      </picker>
+      <view>{{userData.banji}}</view>
       <image class="arrow" src="../../assets/images/toright_icons.png"></image>
     </view>
   </view>
-  <view class="item_box">
+  <view class="item_box" bindtap="changeMyInfo" data-type="zhuanye">
     <view class="txt">专业</view>
     <view class="right">
-      <picker class="picker_box" bindchange="bindPickerChange" data-type="majortxt" value="{{index}}" range="{{majortxtList}}">
-        <view class="picker">{{userData.zhuanye}}</view>
-      </picker>
+      <view>{{userData.zhuanye}}</view>
       <image class="arrow" src="../../assets/images/toright_icons.png"></image>
     </view>
   </view>
