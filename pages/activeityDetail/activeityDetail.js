@@ -86,19 +86,28 @@ Page({
   toBaoming (e) {
     let type = e.currentTarget.dataset.type
     if (type === 'ff') {
-      let data = {
-        id: this.data.id
+      let that = this
+      wx.showModal({
+        title: '车票改签',
+        content: '确定要退票吗？',
+        success(res) {
+          if (res.confirm) {
+            let data = {
+              id: that.data.id
+            }
+            app.ajax.tuichuhuodongFeach(data).then(res => {
+              app.alert.error(res.msg)
+              setTimeout(() => {
+                wx.navigateBack({
+                  delta: 1
+                })
+              },1000)
+            }).catch(err => {
+              console.log(err.msg)
+              app.alert.error(err.msg)
+            })
+        }
       }
-      app.ajax.tuichuhuodongFeach(data).then(res => {
-        app.alert.error(res.msg)
-        setTimeout(() => {
-          wx.navigateBack({
-            delta: 1
-          })
-        },1000)
-      }).catch(err => {
-        console.log(err.msg)
-        app.alert.error(err.msg)
       })
     } else {
       let data = {

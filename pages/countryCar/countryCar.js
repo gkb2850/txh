@@ -110,19 +110,28 @@ Page({
   },
   goupiao(e) {
     console.log(e)
-    let data = {
-      memid: this.data.userData.id,
-      memname: this.data.userData.name,
-      ticktid: e.detail.id,
-      phone: this.data.userData.phone
+    let that = this
+    wx.showModal({
+      title: '车票改签',
+      content: '确定要退票吗？',
+      success(res) {
+        if (res.confirm) {
+          let data = {
+            memid: that.data.userData.id,
+            memname: that.data.userData.name,
+            ticktid: e.detail.id,
+            phone: that.data.userData.phone
+          }
+          app.ajax.goupiaoFeach(data).then(res => {
+            console.log(res)
+            app.alert.error(res.msg)
+            that.getTxhCarList()
+          }).catch(err => {
+            console.log(err)
+            app.alert.error(err.msg)
+          })
+      }
     }
-    app.ajax.goupiaoFeach(data).then(res => {
-      console.log(res)
-      app.alert.error(res.msg)
-      this.getTxhCarList()
-    }).catch(err => {
-      console.log(err)
-      app.alert.error(err.msg)
     })
   },
   /**

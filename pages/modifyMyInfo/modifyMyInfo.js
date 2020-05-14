@@ -68,6 +68,15 @@ Page({
   },
   inputphone(e) {
     let value = e.detail.value
+    if (value === '') {
+      app.alert.error('号码不能为空')
+      return
+    }
+
+    if (!(/^1[3456789]\d{9}$/.test(value))) {
+      app.alert.error('请输入正确的号码')
+      return
+    }
     this.setData({
       'userData.phone': value
     })
