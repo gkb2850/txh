@@ -22,14 +22,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     if (options.id) {
       this.setData({
         id: options.id
       })
     }
-    if (options.activityid) {
+    if (options.activityid !== 'undefined') {
       this.setData({
         activityid: options.activityid
+      })
+    } else {
+      this.setData({
+        activityid: options.id
       })
     }
     console.log(options.type)

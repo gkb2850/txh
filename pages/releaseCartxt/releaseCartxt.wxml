@@ -8,11 +8,11 @@
       <view class="right">
         <view class="origin">
           <view class="top_txt">上车点</view>
-          <input type="text" placeholder="填写出发点" value="{{ticketData.geton}}" bindinput="inputgeton"></input>
+          <input type="text" placeholder="填写出发点" value="{{ticketData.geton}}" bindblur="inputgeton"></input>
         </view>
         <view class="origin">
           <view class="top_txt">目的地</view>
-          <input type="text" placeholder="填写目的地" value="{{ticketData.getoff}}" bindinput="inputgetoff"></input>
+          <input type="text" placeholder="填写目的地" value="{{ticketData.getoff}}" bindblur="inputgetoff"></input>
         </view>
       </view>
     </view>
@@ -61,7 +61,7 @@
       <view class="right">
         <view class="origin">
           <view class="top_txt">班次详情</view>
-          <textarea placeholder="填写班次详情" value="{{ticketData.banci}}" bindinput="inputbanci"></textarea>
+          <textarea placeholder="填写班次详情" value="{{ticketData.banci}}" bindblur="inputbanci"></textarea>
         </view>
       </view>
     </view>
@@ -72,7 +72,7 @@
       <view class="right">
         <view class="origin">
           <view class="top_txt">车票数</view>
-          <input type="number" placeholder="填写车票数量" value="{{ticketData.num}}" bindinput="inputnum"></input>
+          <input type="number" placeholder="填写车票数量" value="{{ticketData.num}}" bindblur="inputnum"></input>
         </view>
       </view>
     </view>
@@ -83,7 +83,7 @@
       <view class="right">
         <view class="origin">
           <view class="top_txt">价格</view>
-          <input type="number" placeholder="填写车票价" value="{{ticketData.price}}" bindinput="inputprice"></input>
+          <input type="number" placeholder="填写车票价" value="{{ticketData.price}}" bindblur="inputprice"></input>
         </view>
       </view>
     </view>

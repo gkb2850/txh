@@ -1,7 +1,7 @@
 <view class="container">
   <view class="title">
     <image src="../../assets/images/search_icon.png"></image>
-    <input placeholder="搜索车票" value="{{search}}" bindinput="inputsearch"></input>
+    <input placeholder="搜索车票" value="{{search}}" bindblur="inputsearch"></input>
   </view>
   <view class="cont_box">
     <view class="left">

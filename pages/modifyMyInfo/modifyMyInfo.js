@@ -90,12 +90,32 @@ Page({
       'userData.zhuanye': value
     })
   },
+  inputpassword (e) {
+    let value = e.detail.value
+    this.setData({
+      password: value
+    })
+  },
+  inputpasswordNew(e) {
+    let value = e.detail.value
+    this.setData({
+      passwordNew: value
+    })
+  },
+  inputpasswordNews(e) {
+    let value = e.detail.value
+    this.setData({
+      passwordNews: value
+    })
+  },
   clickSure (e) {
     let type = e.currentTarget.dataset.type
     if (type === 'ff') {
       this.changeUserInfo()
     } else {
-      if (this.data.password !== this.data.userData.password) {
+      console.log(this.data.password)
+      console.log(this.data.userData.password)
+      if (this.data.password !== (this.data.userData.password)) {
         app.alert.error('原密码输入有误')
         this.setData({
           password: ''

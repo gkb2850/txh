@@ -17,15 +17,15 @@
 <view class="container" wx:if="{{type === 'password'}}">
   <view class="input_box">
     <view>旧密码</view>
-    <input type="text" value="{{password}}" placeholder="输入你的旧密码" password focus></input>
+    <input type="text" value="{{password}}" placeholder="输入你的旧密码" password focus bindblur="inputpassword" ></input>
   </view>
   <view class="input_box">
     <view>新密码</view>
-    <input type="text" value="{{passwordNew}}" placeholder="输入你的新密码" password></input>
+    <input type="text" value="{{passwordNew}}" placeholder="输入你的新密码" password bindblur="inputpasswordNew"></input>
   </view>
   <view class="input_box">
     <view>确认密码</view>
-    <input type="text" value="{{passwordNews}}" placeholder="确认你的新密码"  password></input>
+    <input type="text" value="{{passwordNews}}" placeholder="确认你的新密码"  password bindblur="inputpasswordNews"></input>
   </view>
   <view class="sure" bindtap="clickSure" data-type="fff">确定</view>
 </view>

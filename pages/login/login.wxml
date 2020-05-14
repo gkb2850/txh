@@ -6,12 +6,12 @@
     <view class="input_box">
       <view class="item">
         <view>账号</view>
-        <input placeholder="请输入账号" value="{{userName}}" bindinput="inputUserName"></input>
+        <input placeholder="请输入账号" value="{{userName}}" bindblur="inputUserName"></input>
         <image src="../../assets/images/eye_icon.png"></image>
       </view>
       <view class="item">
         <view>密码</view>
-        <input placeholder="请输入密码" password value="{{passWord}}" bindinput="inputPassWord"></input>
+        <input placeholder="请输入密码" password value="{{passWord}}" bindblur="inputPassWord"></input>
         <image src="../../assets/images/eyes_icon.png"></image>
       </view>
     </view>

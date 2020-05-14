@@ -8,7 +8,7 @@
       <view class="right">
         <view class="origin">
           <view class="top_txt">主题</view>
-          <input type="text" placeholder="填写发布的标题" value="{{acitveData.title}}" bindinput="inputtitle"></input>
+          <input type="text" placeholder="填写发布的标题" value="{{acitveData.title}}" bindblur="inputtitle"></input>
         </view>
       </view>
     </view>
@@ -19,7 +19,7 @@
       <view class="right">
         <view class="origin">
           <view class="top_txt">活动简介</view>
-          <textarea placeholder="填写活动简介" value="{{acitveData.jianjietxt}}" bindinput="inputjianjie"></textarea>
+          <textarea placeholder="填写活动简介" value="{{acitveData.jianjietxt}}" bindblur="inputjianjie"></textarea>
         </view>
       </view>
     </view>
@@ -60,7 +60,7 @@
       <view class="right">
         <view class="origin">
           <view class="top_txt">负责人</view>
-          <input type="text" placeholder="填写负责人" value="{{acitveData.people}}" bindinput="inputpeople"></input>
+          <input type="text" placeholder="填写负责人" value="{{acitveData.people}}" bindblur="inputpeople"></input>
         </view>
       </view>
     </view>
@@ -71,7 +71,7 @@
       <view class="right">
         <view class="origin">
           <view class="top_txt">联系电话</view>
-          <input placeholder="填写联系电话" type="number" value="{{acitveData.phone}}" bindinput="inputphone"></input>
+          <input placeholder="填写联系电话" type="number" value="{{acitveData.phone}}" bindblur="inputphone"></input>
         </view>
       </view>
     </view>
@@ -82,7 +82,7 @@
       <view class="right">
         <view class="origin">
           <view class="top_txt">地址</view>
-          <input type="text" placeholder="填写活动地址" value="{{acitveData.address}}" bindinput="inputaddress"></input>
+          <input type="text" placeholder="填写活动地址" value="{{acitveData.address}}" bindblur="inputaddress"></input>
         </view>
       </view>
     </view>

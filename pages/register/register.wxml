@@ -9,13 +9,13 @@
   <view class="item_box">
     <view class="txt_title">姓名:</view>
     <view class="right">
-      <input class="txt" value="{{register.name}}" placeholder="请输入你的姓名" bindinput="inputName"></input>
+      <input class="txt" value="{{register.name}}" placeholder="请输入你的姓名" bindblur="inputName"></input>
     </view>
   </view>
   <view class="item_box">
     <view class="txt_title">手机号:</view>
     <view class="right">
-      <input class="txt" value="{{register.phone}}" placeholder="请输入你的手机号" type="number" bindinput="inputPhone"></input>
+      <input class="txt" value="{{register.phone}}" placeholder="请输入你的手机号" type="number" bindblur="inputPhone"></input>
     </view>
   </view>
   <view class="item_box">
@@ -31,7 +31,7 @@
   <view class="item_box">
     <view class="txt_title">地址:</view>
     <view class="right">
-      <input class="txt" value="{{register.address}}" placeholder="请输入你的地址" bindinput="inputAddress"></input>
+      <input class="txt" value="{{register.address}}" placeholder="请输入你的地址" bindblur="inputAddress"></input>
     </view>
   </view>
   <view class="item_box">
@@ -59,37 +59,37 @@
   <view class="item_box">
     <view class="txt_title">院系:</view>
     <view class="right">
-      <input class="txt" value="{{register.collegestxt}}" placeholder="请输入你的院系" type="text" bindinput="inputCollegestxt"></input>
+      <input class="txt" value="{{register.collegestxt}}" placeholder="请输入你的院系" type="text" bindblur="inputCollegestxt"></input>
     </view>
   </view>
   <view class="item_box">
     <view class="txt_title">班级:</view>
     <view class="right">
-      <input class="txt" value="{{register.classtxt}}" placeholder="请输入你的班级" type="text" bindinput="inputClasstxt"></input>
+      <input class="txt" value="{{register.classtxt}}" placeholder="请输入你的班级" type="text" bindblur="inputClasstxt"></input>
     </view>
   </view>
   <view class="item_box">
     <view class="txt_title">专业:</view>
     <view class="right">
-      <input class="txt" value="{{register.majortxt}}" placeholder="请输入你的专业" type="text" bindinput="inputMajortxt"></input>
+      <input class="txt" value="{{register.majortxt}}" placeholder="请输入你的专业" type="text" bindblur="inputMajortxt"></input>
     </view>
   </view>
   <view class="item_box">
     <view class="txt_title">账号:</view>
     <view class="right">
-      <input class="txt" value="{{register.accNum}}" placeholder="请填写你的账号" bindinput="inputAccNum" cursor-spacing="50"></input>
+      <input class="txt" value="{{register.accNum}}" placeholder="请填写你的账号" bindblur="inputAccNum" cursor-spacing="50"></input>
     </view>
   </view>
   <view class="item_box">
     <view class="txt_title">密码:</view>
     <view class="right">
-      <input class="txt" value="{{register.password}}" placeholder="请填写你的密码" password bindinput="inputPassword" cursor-spacing="50"></input>
+      <input class="txt" value="{{register.password}}" placeholder="请填写你的密码" password bindblur="inputPassword" cursor-spacing="50"></input>
     </view>
   </view>
   <view class="item_box">
     <view class="txt_title">确认密码:</view>
     <view class="right">
-      <input class="txt" value="{{register.passwords}}" placeholder="请确认你的密码" password bindinput="inputPasswords" bindblur="blurPasswords" cursor-spacing="50"></input>
+      <input class="txt" value="{{register.passwords}}" placeholder="请确认你的密码" password bindblur="inputPasswords" bindblur="blurPasswords" cursor-spacing="50"></input>
     </view>
   </view>
   <view class="bot_reg">
