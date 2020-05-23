@@ -19,6 +19,7 @@
     </view>
     <!-- <view>新加的</view> -->
     <!-- <view>新加的2</view> -->
+    <!-- <view>新加的3</view> -->
     <view class="new_box">
       <view class="item_box" wx:for="{{newsList}}" wx:key="index" bindtap="tozixunInfo" data-id="{{item.id}}">
         <view class="left">
