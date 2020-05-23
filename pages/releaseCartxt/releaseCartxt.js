@@ -79,7 +79,7 @@ Page({
   },
   // 发布车票
   fabuCarPiao () {
-    if (this.data.ticketData.firstDay === '填写预约日期' || this.data.ticketData.lastDay === '填写结束日期' || this.data.ticketData.startDay === '填写发车日期' || this.data.ticketData.startTime === '填写发车时间' || this.data.ticketData.num === '' || this.data.ticketData.price === '' || this.data.ticketData.geton === '' || this.data.ticketData.getoff === '') {
+    if (this.data.ticketData.firstDay === '填写预约日期' || this.data.ticketData.startDay === '填写发车日期' || this.data.ticketData.startTime === '填写发车时间' || this.data.ticketData.num === '' || this.data.ticketData.price === '' || this.data.ticketData.geton === '' || this.data.ticketData.getoff === '') {
       app.alert.error('请填写完整')
       return
     }
@@ -93,7 +93,7 @@ Page({
       onbus: this.data.ticketData.geton,
       offbus: this.data.ticketData.getoff,
       maketime: this.data.ticketData.firstDay,
-      endtime: this.data.ticketData.lastDay,
+      endtime: '',
       starttime: this.data.ticketData.startDay + ' '+ this.data.ticketData.startTime,
       banci: this.data.ticketData.banci,
       num: this.data.ticketData.num,

@@ -16,7 +16,9 @@
       <view class="money">￥{{item.price}}</view>
     </view>
     <view class="right" wx:if="{{!typeticket && (item.num - item.endnum) > 0}}">
-      <view bindtap="goupiao" data-id="{{item.id}}">购票</view>
+      <view bindtap="goupiao" data-id="{{item.id}}" wx:if="{{item.makeTime <= piaoBtn && piaoBtn < item.startTime}}">购票</view>
+      <view wx:if="{{piaoBtn > item.startTime}}" class="makeTxt" >已失效</view>
+      <view wx:if="{{piaoBtn < item.makeTime && piaoBtn < item.startTime}}"  class="makeTxt">预约时间：{{item.maketime}}</view>
     </view>
   </view>
 </view>

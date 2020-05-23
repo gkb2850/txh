@@ -11,6 +11,10 @@ Component({
     typeticket: {
       type: Boolean,
       value: false
+    },
+    piaoBtn: {
+      type: Number,
+      value: 0
     }
   },
 

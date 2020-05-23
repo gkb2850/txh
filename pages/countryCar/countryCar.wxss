@@ -97,3 +97,136 @@ page {
 .container .cont_box .right .right_box {
   padding-top: 4rpx;
 }
+
+
+
+.container .payMask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.container .payMask .mask_bg {
+  height: 100%;
+  width: 100%;
+  background: rgba(99,109,123,0.5)
+}
+
+.container .payMask .pay_cont {
+  background: #fff;
+  border-radius: 12rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: -40%;
+  width: 80%;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.container .payMask .pay_cont .title {
+  height: 40rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  margin: 0;
+}
+
+.container .payMask .pay_cont .title image {
+  height: 30rpx;
+  width: 30rpx;
+  display: block;
+  margin: 0;
+}
+
+.container .payMask .pay_cont .title view {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:rgba(45,130,255,1);
+}
+
+.container .payMask .pay_cont .cont {
+  padding: 40rpx 0 0 0;
+  border-bottom: 2rpx solid #D1D1D1;
+}
+
+.container .payMask .pay_cont .cont .name {
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size:24rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:#000;
+}
+
+.container .payMask .pay_cont .cont .money {
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size:40rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:bold;
+  color:#000;
+}
+
+.container .payMask .pay_cont .paytype {
+  height: 60rpx;
+  padding: 10rpx 0;
+  display: flex;
+  align-items: center;
+}
+
+.container .payMask .pay_cont .paytype>view:nth-child(1) {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(102,102,102,1);
+  display: inline-flex;
+}
+
+.container .payMask .pay_cont .paytype>view:nth-child(2) {
+  flex: 1;
+  text-align: right;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:#000;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.container .payMask .pay_cont .paytype>image {
+  height: 26rpx;
+  width: 26rpx;
+  margin-left: 10rpx;
+}
+
+.container .payMask .pay_cont .btn_box {
+  width: 180rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 10rpx;
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:#fff;
+  background: #31CC90;
+  text-align: center;
+  margin: 20rpx auto;
+}
+
+
+
+
+
+

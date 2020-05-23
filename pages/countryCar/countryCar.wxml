@@ -17,9 +17,29 @@
     <view class="right">
       <scroll-view style="height: 100%;" scroll-y>
         <view class="right_box">
-          <v-caritem data="{{carticketList}}" bind:setCarChange="goupiao"></v-caritem>
+          <v-caritem data="{{carticketList}}" bind:setCarChange="goupiao" piaoBtn="{{piaoBtn}}"></v-caritem>
         </view>
       </scroll-view>
+    </view>
+  </view>
+
+  <view class="payMask" wx:if="{{payMaskShow}}">
+    <view class="mask_bg" bindtap="toHidePayMask"></view>
+    <view class="pay_cont">
+      <view class="title">
+        <image src="../../assets/images/error.png" bindtap="toHidePayMask"></image>
+        <view>使用密码</view>
+      </view>
+      <view class="cont">
+        <view class="name">{{userData.name}}</view>
+        <view class="money">￥ {{payInfoData.price}}</view>
+      </view>
+      <view class="paytype">
+        <view>支付方式</view>
+        <view>零钱</view>
+        <image src="../../assets/images/toright_icons.png"></image>
+      </view>
+      <view class="btn_box" bindtap="toPayMask">确认支付</view>
     </view>
   </view>
 </view>

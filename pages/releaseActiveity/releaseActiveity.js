@@ -152,12 +152,6 @@ Page({
   },
   inputphone (e) {
     let value = e.detail.value
-    this.setData({
-      'acitveData.phone':value
-    })
-  },
-  inputpeople(e) {
-    let value = e.detail.value
     if (value === '') {
       app.alert.error('号码不能为空')
       return
@@ -167,6 +161,12 @@ Page({
       app.alert.error('请输入正确的号码')
       return
     }
+    this.setData({
+      'acitveData.phone':value
+    })
+  },
+  inputpeople(e) {
+    let value = e.detail.value
     this.setData({
       'acitveData.people': value
     })

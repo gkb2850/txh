@@ -11,7 +11,11 @@ Page({
     carticketList: [],
     search: '',
     userData: {},
-    txhid:''
+    txhid:'',
+    piaoBtn: 0,
+    payMaskShow: false,
+    payInfoData: {},
+    ticktId: ''
   },
 
   /**
@@ -46,6 +50,11 @@ Page({
         })
       }
     })
+    let date = new Date()
+    this.setData({
+      piaoBtn: date.getTime()
+    })
+    console.log(date.getTime())
     this.gettxhList()
     this.getTxhCarList()
   },
@@ -77,10 +86,13 @@ Page({
         let num = i.starttime.indexOf(' ')
         i.times = i.starttime.slice(num)
         i.startDay = i.starttime.slice(0, num)
+        i.makeTime = new Date(i.maketime).getTime()
+        i.startTime = new Date(i.starttime).getTime()
       })
       this.setData({
         carticketList: data
       })
+      console.log(data)
       app.alert.hideloading()
     }).catch(err => {
       app.alert.hideloading()
@@ -111,27 +123,65 @@ Page({
   goupiao(e) {
     console.log(e)
     let that = this
-    wx.showModal({
-      title: '车票改签',
-      content: '确定要退票吗？',
-      success(res) {
-        if (res.confirm) {
-          let data = {
-            memid: that.data.userData.id,
-            memname: that.data.userData.name,
-            ticktid: e.detail.id,
-            phone: that.data.userData.phone
-          }
-          app.ajax.goupiaoFeach(data).then(res => {
-            console.log(res)
-            app.alert.error(res.msg)
-            that.getTxhCarList()
-          }).catch(err => {
-            console.log(err)
-            app.alert.error(err.msg)
-          })
+    this.setData({
+      payMaskShow: true,
+      ticktId: e.detail.id
+    })
+    this.data.carticketList.forEach(i => {
+      if (i.id === e.detail.id) {
+        this.setData({
+          payInfoData: i
+        })
       }
+    })
+    // wx.showModal({
+    //   title: '车票购买',
+    //   content: '确定要购票吗？',
+    //   success(res) {
+    //     if (res.confirm) {
+    //       let data = {
+    //         memid: that.data.userData.id,
+    //         memname: that.data.userData.name,
+    //         ticktid: e.detail.id,
+    //         phone: that.data.userData.phone
+    //       }
+    //       app.ajax.goupiaoFeach(data).then(res => {
+    //         app.alert.error(res.msg)
+    //         that.getTxhCarList()
+    //       }).catch(err => {
+    //         console.log(err)
+    //         app.alert.error(err.msg)
+    //       })
+    //   }
+    // }
+    // })
+  },
+
+  toHidePayMask () {
+    this.setData({
+      payMaskShow: false
+    })
+  },
+
+  toPayMask () {
+    let that = this
+    let data = {
+      memid: that.data.userData.id,
+      memname: that.data.userData.name,
+      ticktid: this.data.ticktId,
+      phone: that.data.userData.phone
     }
+    app.ajax.goupiaoFeach(data).then(res => {
+      app.alert.error(res.msg)
+      this.setData({
+        payMaskShow: false
+      })
+      setTimeout(() => {
+        that.getTxhCarList()
+      },1000)
+    }).catch(err => {
+      console.log(err)
+      app.alert.error(err.msg)
     })
   },
   /**

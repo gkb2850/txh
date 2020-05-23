@@ -27,12 +27,12 @@
             <view class="picker">{{ticketData.firstDay}}</view>
           </picker>
         </view>
-        <view class="origin">
+        <!-- <view class="origin">
           <view class="top_txt">结束时间</view>
           <picker class="picker_box" mode="date" value="{{ticketData.lastDay}}" start="2020-04-01" end="2022-08-01" bindchange="bindDateChange" data-type="lastDay">
             <view class="picker">{{ticketData.lastDay}}</view>
           </picker>
-        </view>
+        </view> -->
       </view>
     </view>
     <view class="item_box">

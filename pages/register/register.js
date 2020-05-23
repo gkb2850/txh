@@ -115,14 +115,9 @@ Page({
       'register.password': value
     })
   },
-  inputPasswords(e) {
-    let value = e.detail.value
-    this.setData({
-      'register.passwords': value
-    })
-  },
   blurPasswords(e) {
-    if (this.data.register.password !== this.data.register.passwords) {
+    let value = e.detail.value
+    if (this.data.register.password !== value) {
       this.setData({
         'register.passwords': ''
       })
@@ -131,7 +126,11 @@ Page({
         icon: 'none',
         duration: 1000
       })
+      return
     }
+    this.setData({
+      'register.passwords': value
+    })
   },
   inputName(e) {
     let value = e.detail.value
